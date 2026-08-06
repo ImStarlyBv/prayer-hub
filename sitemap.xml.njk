@@ -1,0 +1,16 @@
+---
+eleventyExcludeFromCollections: true
+sitemap: false
+permalink: "sitemap.xml"
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- set total = collections.sitemapEntries.length -%}
+{%- set pages = total | ceilDiv(sitemapChunkSize) -%}
+{%- for i in range(0, pages) %}
+  <sitemap>
+    <loc>{{ site.url }}/sitemap-{{ i }}.xml</loc>
+    <lastmod>{{ site.buildDate }}</lastmod>
+  </sitemap>
+{%- endfor %}
+</sitemapindex>

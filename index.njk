@@ -1,0 +1,50 @@
+---
+layout: layouts/base.njk
+title: "Home"
+description: "A daily-updated library of Catholic prayers — morning, night, and protection."
+---
+<section class="hero">
+  <h1>{{ site.name }}</h1>
+  <div class="fleuron-divider"><span class="line"></span>❦<span class="line"></span></div>
+  <p>{{ site.description }}</p>
+</section>
+
+<section>
+  <h2 class="section-heading"><span class="cross">✠</span> Collections <span class="cross">✠</span></h2>
+  <div class="categories">
+    {% for cat in categories %}
+    <a class="category-card" href="/{{ cat.slug }}/" aria-label="{{ cat.title }}">
+      <span class="category-left">
+        <span class="icon">{{ cat.icon }}</span>
+        <span class="label">
+          <span class="title">{{ cat.title | replace(" Prayers", "") }}</span>
+          <span class="rubric">{{ cat.rubric }}</span>
+        </span>
+      </span>
+      <span class="arrow">arrow_forward</span>
+    </a>
+    {% endfor %}
+  </div>
+</section>
+
+<div class="fleuron-divider"><span class="line"></span>☩<span class="line"></span></div>
+
+<section>
+  <h2 class="section-heading"><span class="cross">✠</span> Recent Additions <span class="cross">✠</span></h2>
+  <ul class="prayer-list">
+    {% for prayer in collections.prayers %}
+    {% if loop.index <= 10 %}
+    <li>
+      <a href="{{ prayer.url }}">
+        <div class="row"><span>{{ prayer.data.category }}</span><span>{{ prayer.data.dateModified | isoDate | truncate(10, true, "") }}</span></div>
+        <h3>{{ prayer.data.title }}</h3>
+        <p class="excerpt">{{ prayer.data.excerpt }}</p>
+      </a>
+    </li>
+    {% endif %}
+    {% endfor %}
+  </ul>
+  <div class="button-row">
+    <a class="gilded-button" href="/archive/">View Full Archive</a>
+  </div>
+</section>

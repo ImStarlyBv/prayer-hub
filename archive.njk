@@ -1,0 +1,23 @@
+---
+layout: layouts/base.njk
+title: "Missal Archive"
+description: "Every prayer in Prayer Hub, listed in one place."
+permalink: "/archive/"
+---
+<section class="hero">
+  <h1>Missal Archive</h1>
+  <div class="fleuron-divider"><span class="line"></span>❦<span class="line"></span></div>
+  <p>Every prayer, in one place.</p>
+</section>
+
+<ul class="prayer-list">
+{% for prayer in collections.prayers %}
+  <li>
+    <a href="{{ prayer.url }}">
+      <div class="row"><span>{{ prayer.data.category }}</span><span>{{ prayer.data.dateModified | isoDate | truncate(10, true, "") }}</span></div>
+      <h3>{{ prayer.data.title }}</h3>
+      <p class="excerpt">{{ prayer.data.excerpt }}</p>
+    </a>
+  </li>
+{% endfor %}
+</ul>

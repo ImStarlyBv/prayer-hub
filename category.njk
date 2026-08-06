@@ -1,0 +1,30 @@
+---
+pagination:
+  data: categories
+  size: 1
+  alias: cat
+permalink: "/{{ cat.slug }}/"
+layout: layouts/base.njk
+eleventyComputed:
+  title: "{{ cat.title }}"
+  description: "{{ cat.description }}"
+---
+<section class="hero">
+  <h1>{{ cat.title }}</h1>
+  <div class="fleuron-divider"><span class="line"></span>❦<span class="line"></span></div>
+  <p>{{ cat.description }}</p>
+</section>
+
+<ul class="prayer-list">
+{% for prayer in collections.prayers %}
+  {% if prayer.data.category == cat.slug %}
+  <li>
+    <a href="{{ prayer.url }}">
+      <div class="row"><span>{{ cat.rubric }}</span><span>{{ prayer.data.dateModified | isoDate | truncate(10, true, "") }}</span></div>
+      <h3>{{ prayer.data.title }}</h3>
+      <p class="excerpt">{{ prayer.data.excerpt }}</p>
+    </a>
+  </li>
+  {% endif %}
+{% endfor %}
+</ul>

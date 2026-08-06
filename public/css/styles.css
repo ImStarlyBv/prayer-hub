@@ -1,0 +1,361 @@
+:root {
+  --surface: #fff9ea;
+  --surface-container-low: #f9f3e3;
+  --surface-container: #f4eede;
+  --surface-container-high: #eee8d8;
+  --surface-container-highest: #e8e2d2;
+  --on-surface: #1a1a1a;
+  --on-surface-variant: #544341;
+  --outline: #877271;
+  --outline-variant: #dac1bf;
+
+  --primary: #3f0508;
+  --primary-container: #5c1a1a;
+  --on-primary-container: #dd7f7a;
+
+  --secondary: #7b5800;
+  --secondary-container: #fdc34d;
+  --secondary-fixed: #ffdea6;
+  --secondary-fixed-dim: #f7bd48;
+  --on-secondary-fixed: #271900;
+
+  --error: #ba1a1a;
+}
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--surface);
+  color: var(--on-surface);
+  font-family: "Source Serif 4", Georgia, serif;
+  line-height: 1.6;
+}
+
+a { color: inherit; }
+
+/* ---------- Header ---------- */
+
+.site-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--primary-container);
+  border-bottom: 2px solid var(--secondary-fixed-dim);
+}
+
+.site-header .brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.site-header .brand img {
+  height: 32px;
+  width: 32px;
+  display: block;
+}
+
+.site-header .brand span {
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--secondary-fixed);
+  letter-spacing: 0.02em;
+}
+
+.site-nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.site-nav a {
+  color: var(--secondary-fixed);
+  text-decoration: none;
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+}
+
+.site-nav a:hover { color: var(--secondary-container); }
+
+/* ---------- Layout ---------- */
+
+main {
+  max-width: 760px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+h1, h2, h3 {
+  font-family: "EB Garamond", Georgia, serif;
+  color: var(--primary-container);
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  text-align: center;
+  padding: 1rem 0 2rem;
+}
+
+.hero h1 {
+  font-size: 2.75rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.75rem;
+}
+
+.hero p {
+  font-style: italic;
+  color: var(--on-surface-variant);
+  max-width: 30rem;
+  margin: 0 auto;
+}
+
+/* ---------- Fleuron dividers ---------- */
+
+.fleuron-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  color: var(--secondary);
+  opacity: 0.75;
+  margin: 2rem 0;
+}
+
+.fleuron-divider .line {
+  height: 1px;
+  width: 3rem;
+  background: var(--secondary);
+}
+
+.section-heading {
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-heading .cross { color: var(--secondary); font-size: 0.9rem; }
+
+/* ---------- Category cards (Folios) ---------- */
+
+.categories {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.category-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  background: var(--surface-container-highest);
+  border: 1px solid var(--secondary);
+  outline: 3px solid var(--surface);
+  outline-offset: -6px;
+  text-decoration: none;
+  color: var(--on-surface);
+  min-height: 5.5rem;
+  transition: transform 0.15s ease;
+}
+
+.category-card:hover { transform: translateY(-2px); }
+
+.category-card .icon {
+  font-family: "Material Symbols Outlined";
+  font-size: 2rem;
+  color: var(--primary-container);
+}
+
+.category-card .label {
+  display: flex;
+  flex-direction: column;
+}
+
+.category-card .label .title {
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: 1.25rem;
+  color: var(--on-surface);
+}
+
+.category-card .label .rubric {
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: 0.7rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--on-surface-variant);
+}
+
+.category-card .arrow {
+  font-family: "Material Symbols Outlined";
+  color: var(--secondary);
+}
+
+.category-left { display: flex; align-items: center; gap: 1rem; }
+
+/* ---------- Prayer / recent additions list ---------- */
+
+.prayer-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid var(--secondary);
+  border-bottom: 1px solid var(--secondary);
+}
+
+.prayer-list li {
+  padding: 1rem 0;
+  border-bottom: 1px dashed var(--outline-variant);
+}
+
+.prayer-list li:last-child { border-bottom: none; }
+
+.prayer-list a { text-decoration: none; display: block; }
+
+.prayer-list .row {
+  display: flex;
+  justify-content: space-between;
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  margin-bottom: 0.35rem;
+}
+
+.prayer-list h3 {
+  font-size: 1.15rem;
+  margin: 0 0 0.35rem;
+  color: var(--on-surface);
+}
+
+.prayer-list .excerpt {
+  color: var(--on-surface-variant);
+  font-size: 0.95rem;
+  margin: 0;
+}
+
+.meta { color: var(--on-surface-variant); font-size: 0.85rem; }
+
+/* ---------- Archive button ---------- */
+
+.button-row { display: flex; justify-content: center; margin-top: 1.5rem; }
+
+.gilded-button {
+  display: inline-block;
+  background: var(--primary-container);
+  color: var(--secondary-fixed);
+  border: 1px solid var(--secondary);
+  font-family: "EB Garamond", Georgia, serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.85rem;
+  padding: 0.85rem 2rem;
+  text-decoration: none;
+}
+
+.gilded-button:hover { background: #4a1414; }
+
+/* ---------- Prayer detail (Folio frame) ---------- */
+
+.prayer-frame {
+  border: 2px solid var(--secondary);
+  padding: 4px;
+}
+
+.prayer-frame-inner {
+  border: 1px solid var(--secondary);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+}
+
+.breadcrumb {
+  text-align: left;
+  margin: 0 0 1.5rem;
+}
+
+.breadcrumb a {
+  color: var(--secondary);
+  text-decoration: none;
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+.prayer-frame-inner h1 {
+  font-size: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--primary-container);
+  margin: 0 0 0.75rem;
+}
+
+.excerpt {
+  font-style: italic;
+  color: var(--on-surface-variant);
+  max-width: 28rem;
+  margin: 0 auto 2rem;
+}
+
+.prayer-body {
+  text-align: left;
+  max-width: 32rem;
+  margin: 0 auto;
+}
+
+.prayer-body p:first-of-type::first-letter {
+  font-family: "EB Garamond", Georgia, serif;
+  font-weight: 700;
+  font-size: 3.75rem;
+  line-height: 1;
+  float: left;
+  margin: 0.1rem 0.5rem 0 0;
+  color: var(--primary-container);
+}
+
+.updated {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(123, 88, 0, 0.3);
+  font-family: "EB Garamond", Georgia, serif;
+  font-size: 0.8rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--on-surface-variant);
+  opacity: 0.7;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  text-align: center;
+  padding: 2rem;
+  color: var(--secondary);
+  opacity: 0.6;
+}
+
+.site-footer .links {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.site-footer .links a {
+  color: var(--on-surface-variant);
+  text-decoration: none;
+  margin: 0 0.5rem;
+}

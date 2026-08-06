@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0">
+  <channel>
+    <title>{{ site.name }}</title>
+    <link>{{ site.url }}/</link>
+    <description>{{ site.description }}</description>
+    <lastBuildDate>{{ site.buildDate | isoDate }}</lastBuildDate>
+    {%- for prayer in collections.prayers %}
+    {%- if loop.index <= 100 %}
+    <item>
+      <title>{{ prayer.data.title }}</title>
+      <link>{{ site.url }}{{ prayer.url }}</link>
+      <guid>{{ site.url }}{{ prayer.url }}</guid>
+      <pubDate>{{ prayer.data.dateModified | isoDate }}</pubDate>
+      <description>{{ prayer.data.excerpt }}</description>
+    </item>
+    {%- endif %}
+    {%- endfor %}
+  </channel>
+</rss>

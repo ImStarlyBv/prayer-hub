@@ -1,0 +1,19 @@
+---
+# NOTE: size must match sitemapChunkSize in .eleventy.js
+eleventyExcludeFromCollections: true
+sitemap: false
+pagination:
+  data: collections.sitemapEntries
+  size: 40000
+  alias: urls
+permalink: "sitemap-{{ pagination.pageNumber }}.xml"
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+{%- for item in urls %}
+  <url>
+    <loc>{{ site.url }}{{ item.url }}</loc>
+    <lastmod>{{ (item.data.dateModified or item.date) | isoDate }}</lastmod>
+  </url>
+{%- endfor %}
+</urlset>

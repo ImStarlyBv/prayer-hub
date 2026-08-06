@@ -1,0 +1,21 @@
+---
+layout: layouts/base.njk
+---
+<div class="prayer-frame">
+  <article class="prayer-frame-inner">
+    {% for cat in categories %}{% if cat.slug == category %}
+    <p class="breadcrumb"><a href="/{{ category }}/">&lsaquo; {{ cat.title }}</a></p>
+    {% endif %}{% endfor %}
+
+    <div class="fleuron-divider" style="margin-top:0;">❦ ✠ ❦</div>
+
+    <h1>{{ title }}</h1>
+    {% if excerpt %}<p class="excerpt">{{ excerpt }}</p>{% endif %}
+
+    <div class="prayer-body">
+      {{ content | safe }}
+    </div>
+
+    <p class="updated">Last updated {{ dateModified | isoDate | truncate(10, true, "") }}</p>
+  </article>
+</div>

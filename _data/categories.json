@@ -1,0 +1,23 @@
+[
+  {
+    "slug": "morning-prayer",
+    "title": "Morning Prayers",
+    "rubric": "Ad Matutinum",
+    "icon": "wb_sunny",
+    "description": "Prayers to begin the day in gratitude, offering the hours ahead to God."
+  },
+  {
+    "slug": "night-prayer",
+    "title": "Night Prayers",
+    "rubric": "Ad Completorium",
+    "icon": "bedtime",
+    "description": "Prayers for the evening and before sleep — for peace, protection, and rest through the night."
+  },
+  {
+    "slug": "protection-prayer",
+    "title": "Prayers for Protection",
+    "rubric": "Pro Tutela",
+    "icon": "shield",
+    "description": "Prayers invoking God's protection over family, home, and self against harm."
+  }
+]

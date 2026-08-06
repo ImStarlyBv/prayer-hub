@@ -5,7 +5,8 @@
   "scripts": {
     "build": "eleventy",
     "serve": "eleventy --serve",
-    "watch": "eleventy --watch"
+    "watch": "eleventy --watch",
+    "indexnow": "node scripts/ping-indexnow.js"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1"

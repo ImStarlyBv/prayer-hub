@@ -1,0 +1,32 @@
+name: IndexNow ping
+
+# Fires on every push to main that changes content, so search engines (Bing,
+# Yandex, Seznam, Naver…) are notified automatically — no manual
+# `npm run indexnow` needed. Coolify redeploys in parallel; IndexNow crawls
+# with a short delay, so the pages are live by the time it fetches them.
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'content/**'
+      - '_data/**'
+      - '_includes/**'
+      - '*.njk'
+
+# Avoid overlapping pings if several pushes land quickly.
+concurrency:
+  group: indexnow-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm ci
+      - run: npm run build
+      - name: Submit all URLs to IndexNow
+        run: npm run indexnow

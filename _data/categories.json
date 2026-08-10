@@ -19,5 +19,12 @@
     "rubric": "Pro Tutela",
     "icon": "shield",
     "description": "Prayers invoking God's protection over family, home, and self against harm."
+  },
+  {
+    "slug": "healing-prayer",
+    "title": "Prayers for Healing",
+    "rubric": "Pro Sanitate",
+    "icon": "healing",
+    "description": "Prayers asking God's healing touch over body, mind, and spirit in times of sickness and suffering."
   }
 ]

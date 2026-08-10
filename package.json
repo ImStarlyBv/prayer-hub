@@ -6,9 +6,11 @@
     "build": "eleventy",
     "serve": "eleventy --serve",
     "watch": "eleventy --watch",
-    "indexnow": "node scripts/ping-indexnow.js"
+    "indexnow": "node scripts/ping-indexnow.js",
+    "social": "node scripts/prayer-image.js"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1"
+    "@11ty/eleventy": "^2.0.1",
+    "@resvg/resvg-js": "^2.6.2"
   }
 }

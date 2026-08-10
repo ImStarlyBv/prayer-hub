@@ -66,6 +66,44 @@ subtitle shown under the category name on the homepage.
 No template changes needed — the hub page, nav link, and homepage card are all
 generated automatically for anything in this file.
 
+## Social images
+
+`scripts/prayer-image.js` renders any prayer as a share-ready PNG in the same
+illuminated-missal design the prayer pages use — cream ground, double gold frame,
+fleuron divider, uppercase title, drop cap, rubric and domain in the footer.
+
+```bash
+npm run social -- night-prayer                    # 1600×900, for X
+npm run social -- night-prayer --size=portrait    # 1080×1350, for Instagram
+npm run social -- --all --size=square             # every prayer, 1080×1080
+```
+
+Output lands in `social/` (gitignored). The argument is a prayer `slug`, or a
+path to any markdown file with the standard frontmatter — so you can render a
+draft before it's committed.
+
+| Size | Dimensions | Use |
+|---|---|---|
+| `x` (default) | 1600×900 | X / Twitter in-stream, LinkedIn |
+| `og` | 1200×630 | Open Graph link previews |
+| `square` | 1080×1080 | Instagram feed |
+| `portrait` | 1080×1350 | Instagram portrait |
+| `story` | 1080×1920 | Stories, Reels covers |
+
+The body font auto-shrinks to fit on one image. A prayer too long even at the
+smallest size is split across numbered slides (`-1.png`, `-2.png`) with a
+`CONTINUED` mark and an `n / total` counter — ready to post as a carousel.
+
+Flags: `--out=dir`, `--keep-svg`, `--svg-only`, `--no-excerpt`, `--no-drop-cap`,
+`--max-slides=N`, `--fonts=dir`.
+
+Text is laid out with a serif advance-width table rather than real font metrics,
+so line breaks are approximate — check the output before posting a title with
+unusual characters. PNG rasterization uses `@resvg/resvg-js`; if it isn't
+installed the script writes SVG instead. Rendering uses whatever serif the system
+provides (Georgia locally). To match the site's EB Garamond and Source Serif 4
+exactly, drop the `.ttf` files in a folder and pass `--fonts=that-folder`.
+
 ## What's NOT built yet
 
 These content shapes don't have templates yet — they'd need their own layout,

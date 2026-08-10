@@ -82,6 +82,31 @@ Output lands in `social/` (gitignored). The argument is a prayer `slug`, or a
 path to any markdown file with the standard frontmatter — so you can render a
 draft before it's committed.
 
+### Paths
+
+Both the input and the output are fully customizable:
+
+```bash
+# write anywhere — the folder is created if it doesn't exist
+npm run social -- night-prayer --out="C:/Users/you/Desktop/posts"
+
+# render a draft sitting outside the repo
+npm run social -- "C:/drafts/prayer-for-healing.md" --out="C:/drafts/img"
+
+# point --all (and slug lookup) at a different source folder
+npm run social -- --all --prayers="C:/drafts" --out="C:/drafts/img"
+```
+
+- **Input** — an absolute path, a path relative to where you ran the command, a
+  path relative to the repo root, or a bare slug resolved inside the prayers
+  folder. First match wins, in that order.
+- **`--out`** — absolute, or relative to where you ran the command. Nested paths
+  are created recursively. Defaults to `social/` in the repo.
+- **`--prayers`** — the folder `--all` scans and bare slugs resolve against.
+  Defaults to `content/prayers/`.
+
+Paths with spaces need quoting. Windows backslashes work as-is.
+
 | Size | Dimensions | Use |
 |---|---|---|
 | `x` (default) | 1600×900 | X / Twitter in-stream, LinkedIn |
@@ -94,8 +119,30 @@ The body font auto-shrinks to fit on one image. A prayer too long even at the
 smallest size is split across numbered slides (`-1.png`, `-2.png`) with a
 `CONTINUED` mark and an `n / total` counter — ready to post as a carousel.
 
-Flags: `--out=dir`, `--keep-svg`, `--svg-only`, `--no-excerpt`, `--no-drop-cap`,
-`--max-slides=N`, `--fonts=dir`.
+Flags: `--out=dir`, `--prayers=dir`, `--pad=N`, `--font-scale=N`, `--keep-svg`,
+`--svg-only`, `--no-excerpt`, `--no-drop-cap`, `--max-slides=N`, `--fonts=dir`.
+
+### Layout
+
+The proportions are tuned for phone viewing — these get read on a five-inch
+screen in a scrolling feed, so the margins are tight and the body text sets
+larger than a print layout would. Everything scales off the image's short edge,
+so it holds at every preset size. The knobs live in the `LAYOUT` object at the
+top of the script:
+
+| Key | Default | Effect |
+|---|---|---|
+| `pad` | `0.05` | Content inset from the edge |
+| `frameInset` | `0.022` | Where the gold frame sits |
+| `bodyMax` | `0.043` | Body font ceiling |
+| `bodyMinRatio` | `0.62` | How far body text may shrink before paginating |
+| `measure` | `38` | Max line length in ems |
+| `bodyFill` | `0.96` | Body width as a fraction of the content width |
+| `lineHeight` | `1.55` | |
+
+For a one-off tweak without touching the file, use `--pad=0.03` (tighter) or
+`--font-scale=1.15` (bigger text). Note that shrinking is what keeps a prayer on
+a single image — pushing `--font-scale` too high forces a split.
 
 Text is laid out with a serif advance-width table rather than real font metrics,
 so line breaks are approximate — check the output before posting a title with

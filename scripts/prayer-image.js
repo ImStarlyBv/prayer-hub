@@ -1,9 +1,12 @@
 // Renders a prayer as a share-ready image in the site's illuminated-missal design.
 // Usage: node scripts/prayer-image.js night-prayer
 //        node scripts/prayer-image.js content/prayers/night-prayer.md --size=square
-//        node scripts/prayer-image.js --all --size=portrait --out=social
+//        node scripts/prayer-image.js --all --size=portrait --out="D:/exports"
 //
-// Writes PNG (and the source SVG with --keep-svg) to ./social/.
+// Paths: the input may be a slug, a relative path, or an absolute path.
+// --out takes any directory (absolute or relative to the current directory) and
+// creates it if missing; --prayers points --all and slug lookup at another folder.
+//
 // PNG rasterization needs @resvg/resvg-js; without it the script still emits SVG.
 
 const fs = require("fs");
@@ -13,7 +16,8 @@ const site = require("../_data/site.js");
 const categories = require("../_data/categories.json");
 
 const ROOT = path.join(__dirname, "..");
-const PRAYERS_DIR = path.join(ROOT, "content", "prayers");
+const DEFAULT_PRAYERS_DIR = path.join(ROOT, "content", "prayers");
+const DEFAULT_OUT_DIR = path.join(ROOT, "social");
 
 /* ---------- Palette (mirrors public/css/styles.css) ---------- */
 
@@ -29,6 +33,27 @@ const C = {
 
 const FONT_DISPLAY = "EB Garamond, Garamond, Georgia, Times New Roman, serif";
 const FONT_BODY = "Source Serif 4, Georgia, Times New Roman, serif";
+
+/* ---------- Layout tuning ----------------------------------------------
+   Everything is a fraction of the image's short edge, so the proportions hold
+   at every preset size. Tuned for phone viewing: these images are read on a
+   ~5-inch screen in a scrolling feed, so the text runs close to the frame and
+   the body sets larger than a print layout would. */
+
+const LAYOUT = {
+  pad: 0.05,           // content inset from the image edge
+  frameInset: 0.022,   // gold frame offset from the image edge
+  frameGap: 0.006,     // space between the two frame rules
+  bodyMax: 0.043,      // body font, as a fraction of the short edge
+  bodyMinRatio: 0.62,  // smallest the body may shrink before paginating — wide
+                       // enough that one long image always beats two short ones
+  measure: 38,         // max body line length, in ems (line-length comfort)
+  bodyFill: 0.96,      // max body width as a fraction of the content width
+  lineHeight: 1.55,
+  titleRatio: 1.85,    // title size relative to body
+  titleFill: 8.5,      // title is capped at contentW / this
+  footerRatio: 0.66,
+};
 
 /* ---------- Presets ---------- */
 
@@ -63,6 +88,10 @@ function measure(text, fontSize, { letterSpacing = 0, bold = false } = {}) {
   return ems * fontSize * (bold ? 1.04 : 1) + letterSpacing * text.length;
 }
 
+// The width table runs a few percent under real Georgia metrics, which is
+// invisible with generous margins but overflows the frame with tight ones.
+const WRAP_SAFETY = 1.05;
+
 // Greedy word wrap. `widthAt(lineIndex)` lets early lines be narrower (drop cap).
 function wrap(text, fontSize, widthAt, opts = {}) {
   const words = text.split(/\s+/).filter(Boolean);
@@ -70,7 +99,7 @@ function wrap(text, fontSize, widthAt, opts = {}) {
   let current = "";
   for (const word of words) {
     const candidate = current ? `${current} ${word}` : word;
-    if (current && measure(candidate, fontSize, opts) > widthAt(lines.length)) {
+    if (current && measure(candidate, fontSize, opts) * WRAP_SAFETY > widthAt(lines.length)) {
       lines.push(current);
       current = word;
     } else {
@@ -111,20 +140,24 @@ function toParagraphs(body) {
     .filter(Boolean);
 }
 
-function resolvePrayerFile(input) {
-  const candidates = [
-    input,
-    path.join(ROOT, input),
-    path.join(PRAYERS_DIR, input),
-    path.join(PRAYERS_DIR, `${input}.md`),
-  ];
+// Accepts an absolute path, a path relative to the current directory or the repo
+// root, or a bare slug looked up in the prayers directory.
+function resolvePrayerFile(input, prayersDir = DEFAULT_PRAYERS_DIR) {
+  const candidates = path.isAbsolute(input)
+    ? [input, `${input}.md`]
+    : [
+        path.resolve(process.cwd(), input),
+        path.resolve(ROOT, input),
+        path.join(prayersDir, input),
+        path.join(prayersDir, `${input}.md`),
+      ];
   const found = candidates.find((c) => fs.existsSync(c) && fs.statSync(c).isFile());
   if (!found) throw new Error(`prayer not found: ${input}`);
   return found;
 }
 
-function loadPrayer(input) {
-  const file = resolvePrayerFile(input);
+function loadPrayer(input, prayersDir) {
+  const file = resolvePrayerFile(input, prayersDir);
   const { data, body } = parseFrontmatter(fs.readFileSync(file, "utf8"));
   const category = categories.find((c) => c.slug === data.category);
   return {
@@ -177,11 +210,12 @@ function esc(s) {
 // Returns null if it needs more slides than `maxSlides`.
 function layout(prayer, paragraphs, geo, bodyFont, opts) {
   const { w, h } = geo;
-  const pad = Math.round(Math.min(w, h) * 0.075);
+  const short = Math.min(w, h);
+  const pad = Math.round(short * opts.pad);
   const contentW = w - pad * 2;
-  const bodyW = Math.min(contentW * 0.92, bodyFont * 34);
+  const bodyW = Math.min(contentW * LAYOUT.bodyFill, bodyFont * LAYOUT.measure);
   const bodyX = Math.round((w - bodyW) / 2);
-  const lineHeight = bodyFont * 1.62;
+  const lineHeight = bodyFont * LAYOUT.lineHeight;
   const paraGap = bodyFont * 0.7;
 
   const capFont = bodyFont * 2.7;
@@ -207,10 +241,10 @@ function layout(prayer, paragraphs, geo, bodyFont, opts) {
 
   // Header block heights.
   const fleuronFont = Math.round(bodyFont * 1.15);
-  const titleFont = Math.round(Math.min(bodyFont * 1.9, contentW / 9));
+  const titleFont = Math.round(Math.min(bodyFont * LAYOUT.titleRatio, contentW / LAYOUT.titleFill));
   const titleLS = titleFont * 0.06;
   const excerptFont = Math.round(bodyFont * 0.95);
-  const footerFont = Math.round(bodyFont * 0.62);
+  const footerFont = Math.round(bodyFont * LAYOUT.footerRatio);
 
   const titleLines = wrap(prayer.title.toUpperCase(), titleFont, () => contentW, {
     letterSpacing: titleLS,
@@ -308,10 +342,10 @@ function renderSVG(prayer, slide, index, total) {
   parts.push(`<rect width="${w}" height="${h}" fill="${C.surface}"/>`);
 
   // Double gold frame, matching .prayer-frame / .prayer-frame-inner.
-  const o = Math.round(Math.min(w, h) * 0.032);
+  const o = Math.round(Math.min(w, h) * LAYOUT.frameInset);
   const ow = w - o * 2;
   const oh = h - o * 2;
-  const gap = Math.max(4, Math.round(Math.min(w, h) * 0.008));
+  const gap = Math.max(4, Math.round(Math.min(w, h) * LAYOUT.frameGap));
   parts.push(`<rect x="${o}" y="${o}" width="${ow}" height="${oh}" fill="none" stroke="${C.secondary}" stroke-width="3"/>`);
   parts.push(`<rect x="${o + gap}" y="${o + gap}" width="${ow - gap * 2}" height="${oh - gap * 2}" fill="none" stroke="${C.secondary}" stroke-width="1.5"/>`);
 
@@ -407,15 +441,22 @@ function toPNG(svg, fontDirs) {
 
 function parseArgs(argv) {
   const opts = {
-    size: "x", out: "social", maxSlides: 6, excerpt: true,
+    size: "x", out: DEFAULT_OUT_DIR, prayers: DEFAULT_PRAYERS_DIR,
+    pad: LAYOUT.pad, fontScale: 1, maxSlides: 6, excerpt: true,
     dropCap: true, keepSvg: false, all: false, fonts: null, inputs: [],
   };
   for (const arg of argv) {
     if (!arg.startsWith("--")) { opts.inputs.push(arg); continue; }
-    const [flag, value] = arg.slice(2).split("=");
+    // Only split on the first "=", so Windows paths with drive letters survive.
+    const eq = arg.indexOf("=");
+    const flag = eq === -1 ? arg.slice(2) : arg.slice(2, eq);
+    const value = eq === -1 ? undefined : arg.slice(eq + 1);
     switch (flag) {
       case "size": opts.size = value; break;
-      case "out": opts.out = value; break;
+      case "out": opts.out = path.resolve(process.cwd(), value); break;
+      case "prayers": opts.prayers = path.resolve(process.cwd(), value); break;
+      case "pad": opts.pad = Number(value); break;
+      case "font-scale": opts.fontScale = Number(value); break;
       case "max-slides": opts.maxSlides = Number(value); break;
       case "no-excerpt": opts.excerpt = false; break;
       case "no-drop-cap": opts.dropCap = false; break;
@@ -426,6 +467,8 @@ function parseArgs(argv) {
       default: throw new Error(`unknown flag: --${flag}`);
     }
   }
+  if (!(opts.pad >= 0 && opts.pad < 0.4)) throw new Error("--pad must be between 0 and 0.4");
+  if (!(opts.fontScale > 0 && opts.fontScale <= 3)) throw new Error("--font-scale must be between 0 and 3");
   return opts;
 }
 
@@ -437,8 +480,8 @@ function render(prayer, opts) {
   if (paragraphs.length === 0) throw new Error(`${prayer.slug}: no prayer text`);
 
   // Prefer the largest body size that fits on one slide; paginate only if none does.
-  const maxFont = Math.round(Math.min(geo.w, geo.h) * 0.036);
-  const minFont = Math.round(maxFont * 0.78);
+  const maxFont = Math.round(Math.min(geo.w, geo.h) * LAYOUT.bodyMax * opts.fontScale);
+  const minFont = Math.round(maxFont * LAYOUT.bodyMinRatio);
   let slides = null;
   for (let fontSize = maxFont; fontSize >= minFont; fontSize -= 1) {
     const attempt = layout(prayer, paragraphs, geo, fontSize, { ...opts, maxSlides: 1 });
@@ -449,9 +492,9 @@ function render(prayer, opts) {
     if (!slides) throw new Error(`${prayer.slug}: too long for ${opts.size} in ${opts.maxSlides} slides`);
   }
 
-  const outDir = path.isAbsolute(opts.out) ? opts.out : path.join(ROOT, opts.out);
+  const outDir = opts.out;
   fs.mkdirSync(outDir, { recursive: true });
-  const fontDirs = opts.fonts ? [path.resolve(ROOT, opts.fonts)] : [];
+  const fontDirs = opts.fonts ? [path.resolve(process.cwd(), opts.fonts)] : [];
   const written = [];
 
   slides.forEach((slide, i) => {
@@ -479,17 +522,29 @@ function render(prayer, opts) {
 }
 
 function main() {
-  const opts = parseArgs(process.argv.slice(2));
+  let opts;
+  try {
+    opts = parseArgs(process.argv.slice(2));
+  } catch (err) {
+    console.error(`[prayer-image] ${err.message}`);
+    process.exit(1);
+  }
 
   if (!opts.all && opts.inputs.length === 0) {
-    console.error("Usage: node scripts/prayer-image.js <slug|file> [--size=x|og|square|portrait|story]");
-    console.error("       node scripts/prayer-image.js --all --size=square");
-    console.error("Flags: --out=dir --keep-svg --svg-only --no-excerpt --no-drop-cap --max-slides=N --fonts=dir");
+    console.error("Usage: node scripts/prayer-image.js <slug|path> [--size=x|og|square|portrait|story]");
+    console.error("       node scripts/prayer-image.js --all --size=square --out=\"D:/exports\"");
+    console.error("Flags: --out=dir --prayers=dir --keep-svg --svg-only --no-excerpt");
+    console.error("       --no-drop-cap --max-slides=N --fonts=dir");
+    process.exit(1);
+  }
+
+  if (opts.all && !fs.existsSync(opts.prayers)) {
+    console.error(`[prayer-image] ERROR: prayers directory not found: ${opts.prayers}`);
     process.exit(1);
   }
 
   const inputs = opts.all
-    ? fs.readdirSync(PRAYERS_DIR).filter((f) => f.endsWith(".md")).map((f) => path.join(PRAYERS_DIR, f))
+    ? fs.readdirSync(opts.prayers).filter((f) => f.endsWith(".md")).map((f) => path.join(opts.prayers, f))
     : opts.inputs;
 
   if (!opts.svgOnly && !getResvg()) {
@@ -500,9 +555,10 @@ function main() {
   let failed = 0;
   for (const input of inputs) {
     try {
-      const prayer = loadPrayer(input);
+      const prayer = loadPrayer(input, opts.prayers);
       for (const file of render(prayer, opts)) {
-        console.log(`[prayer-image] ${path.relative(ROOT, file)}`);
+        const rel = path.relative(ROOT, file);
+        console.log(`[prayer-image] ${rel.startsWith("..") ? file : rel}`);
       }
     } catch (err) {
       failed += 1;

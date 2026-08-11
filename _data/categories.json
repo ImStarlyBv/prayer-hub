@@ -28,6 +28,13 @@
     "description": "Prayers asking God's healing touch over body, mind, and spirit in times of sickness and suffering."
   },
   {
+    "slug": "peace-prayer",
+    "title": "Prayers for Peace",
+    "rubric": "Pro Pace",
+    "icon": "self_improvement",
+    "description": "Prayers for peace of heart and mind, and relief from anxiety and worry."
+  },
+  {
     "slug": "bible-verses",
     "title": "Bible Verses & Reflections",
     "rubric": "Lectio Divina",

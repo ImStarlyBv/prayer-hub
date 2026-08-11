@@ -12,12 +12,12 @@ dateModified: 2026-08-11
 
 Faith runs through Scripture like a thread holding everything together. Again and again, the Bible tells us that faith is not the absence of doubt but the choice to keep trusting God even when we cannot see the way ahead.
 
-We're reminded that faith is the confidence in what we hope for and the assurance of what we cannot yet see. It is not blind guessing — it is trust built on who God has shown Himself to be, again and again, to those who called on Him.
+"Now faith is the substance of things hoped for, the evidence of things not seen" (Hebrews 11:1). It is not blind guessing — it is trust built on who God has shown Himself to be, again and again, to those who called on Him.
 
-Scripture also reminds us that faith can move mountains, that even a small amount, no bigger than a mustard seed, is enough to accomplish what seems impossible. God does not ask for a perfect faith, only a willing one.
+Jesus told His disciples, "If ye have faith as a grain of mustard seed, ye shall say unto this mountain, Remove hence to yonder place; and it shall remove; and nothing shall be impossible unto you" (Matthew 17:20). God does not ask for a perfect faith, only a willing one.
 
-We're told that faith comes by hearing, by staying close to God's word and letting it shape how we see our circumstances. The more we listen, the more our trust deepens, even in seasons of waiting.
+"So then faith cometh by hearing, and hearing by the word of God" (Romans 10:17). The more we stay close to His word and let it shape how we see our circumstances, the more our trust deepens, even in seasons of waiting.
 
-And through it all, we're taught that we walk by faith and not by sight — that the things we cannot yet see are often the very things God is quietly at work on.
+And through it all, Paul reminds us, "we walk by faith, not by sight" (2 Corinthians 5:7) — the things we cannot yet see are often the very things God is quietly at work on.
 
 Lord, I confess that my faith is often small and unsteady. Grow in me a trust that does not depend on what I can see or explain. When doubt creeps in, remind me of Your faithfulness in the past, and give me the courage to keep believing You for what lies ahead. Amen.

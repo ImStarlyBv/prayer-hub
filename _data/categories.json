@@ -26,5 +26,12 @@
     "rubric": "Pro Sanitate",
     "icon": "healing",
     "description": "Prayers asking God's healing touch over body, mind, and spirit in times of sickness and suffering."
+  },
+  {
+    "slug": "bible-verses",
+    "title": "Bible Verses & Reflections",
+    "rubric": "Lectio Divina",
+    "icon": "menu_book",
+    "description": "Short reflections paired with Scripture for daily encouragement."
   }
 ]

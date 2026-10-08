@@ -124,6 +124,7 @@ async function publishPrayer(payload, dryRun) {
     throw new HttpError(500, `build failed, nothing published: ${e.message}`);
   }
   result.indexnow = await indexnow.submit([result.url, `/${prayer.category}/`, "/", "/archive/"]);
+  result.websub = await indexnow.websub();
   return { status: result.updated ? 200 : 201, body: result };
 }
 

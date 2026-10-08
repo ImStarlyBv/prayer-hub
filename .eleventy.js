@@ -40,6 +40,24 @@ module.exports = function (eleventyConfig) {
     return d.toISOString();
   });
 
+  // RSS 2.0 requires RFC-822 dates ("Tue, 15 Sep 2026 00:00:00 GMT").
+  eleventyConfig.addFilter("rfc822", (value) => (value ? new Date(value) : new Date()).toUTCString());
+
+  // Truthful <lastmod>: a prayer's own date; a hub's newest prayer in its
+  // category; home/archive the newest prayer overall. Template file mtimes are
+  // never used, since they change on every deploy.
+  eleventyConfig.addFilter("lastmod", (item, prayers) => {
+    const date = (p) => new Date(p.data.dateModified || p.data.dateAdded || p.date);
+    const newest = (list) => list.reduce((max, p) => (date(p) > max ? date(p) : max), new Date(0));
+    const all = prayers || [];
+    if (item.data.category && item.data.excerpt) return date(item).toISOString();
+    if (item.data.cat) {
+      const own = all.filter((p) => p.data.category === item.data.cat.slug);
+      if (own.length) return newest(own).toISOString();
+    }
+    return all.length ? newest(all).toISOString() : new Date(item.date).toISOString();
+  });
+
   eleventyConfig.addFilter("ceilDiv", (total, size) => {
     return Math.max(1, Math.ceil(total / size));
   });
@@ -70,6 +88,13 @@ module.exports = function (eleventyConfig) {
     return api.getAll().filter((item) => {
       return item.data.sitemap !== false && item.url && !item.url.startsWith("/sitemap");
     });
+  });
+
+  // Feeds list prayers newest-published first (an edit is not a new item).
+  eleventyConfig.addCollection("feedItems", (api) => {
+    return api
+      .getFilteredByGlob(["content/prayers/**/*.md", "content/api/**/*.md"])
+      .sort((a, b) => new Date(b.data.dateAdded || b.date) - new Date(a.data.dateAdded || a.date));
   });
 
   eleventyConfig.addGlobalData("sitemapChunkSize", SITEMAP_CHUNK_SIZE);

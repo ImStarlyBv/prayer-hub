@@ -1,17 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>{{ site.name }}</title>
     <link>{{ site.url }}/</link>
     <description>{{ site.description }}</description>
-    <lastBuildDate>{{ site.buildDate | isoDate }}</lastBuildDate>
-    {%- for prayer in collections.prayers %}
+    <language>en-us</language>
+    <atom:link href="{{ site.url }}/{{ page.outputPath | replace(r/^.*[\/]/, "") }}" rel="self" type="application/rss+xml"/>
+    <atom:link href="{{ site.websubHub }}" rel="hub"/>
+    {%- if collections.feedItems.length %}
+    <lastBuildDate>{{ (collections.prayers[0].data.dateModified or collections.prayers[0].data.dateAdded) | rfc822 }}</lastBuildDate>
+    {%- endif %}
+    {%- for prayer in collections.feedItems %}
     {%- if loop.index <= 100 %}
     <item>
       <title>{{ prayer.data.title }}</title>
       <link>{{ site.url }}{{ prayer.url }}</link>
-      <guid>{{ site.url }}{{ prayer.url }}</guid>
-      <pubDate>{{ prayer.data.dateModified | isoDate }}</pubDate>
+      <guid isPermaLink="true">{{ site.url }}{{ prayer.url }}</guid>
+      <pubDate>{{ (prayer.data.dateAdded or prayer.data.dateModified) | rfc822 }}</pubDate>
       <description>{{ prayer.data.excerpt }}</description>
     </item>
     {%- endif %}

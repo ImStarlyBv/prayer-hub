@@ -10,7 +10,7 @@ permalink: "sitemap.xml"
 {%- for i in range(0, pages) %}
   <sitemap>
     <loc>{{ site.url }}/sitemap-{{ i }}.xml</loc>
-    <lastmod>{{ site.buildDate }}</lastmod>
+    <lastmod>{{ collections.prayers[0] | lastmod(collections.prayers) if collections.prayers.length else site.buildDate }}</lastmod>
   </sitemap>
 {%- endfor %}
 </sitemapindex>

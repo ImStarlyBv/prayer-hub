@@ -14,7 +14,7 @@ permalink: "sitemap-{{ pagination.pageNumber }}.xml"
   {%- if not item.data.cat or (item.data.cat.slug | isPopulated(collections.prayers)) %}
   <url>
     <loc>{{ site.url }}{{ item.url }}</loc>
-    <lastmod>{{ (item.data.dateModified or item.date) | isoDate }}</lastmod>
+    <lastmod>{{ item | lastmod(collections.prayers) }}</lastmod>
   </url>
   {%- endif %}
 {%- endfor %}

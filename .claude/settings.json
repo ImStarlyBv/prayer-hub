@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl * https://mensajes.blackedassians.online/send*)",
+      "Bash(node scripts/publish.js*)"
+    ]
+  }
+}

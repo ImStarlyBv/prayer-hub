@@ -2,3 +2,12 @@ node_modules/
 _site/
 social/
 .DS_Store
+# API-published prayers are projected here by the publisher; source of truth is data/
+content/api/
+# Publisher runtime state (prayer + category JSON). Lives on the server bind mount.
+data/prayers/*.json
+data/categories/*.json
+.env
+_publish/
+drafts/
+backups/

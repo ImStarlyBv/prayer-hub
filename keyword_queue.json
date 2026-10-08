@@ -1,0 +1,1388 @@
+[
+  {
+    "keyword": "psalm 91",
+    "volume": 673000,
+    "difficulty": 17,
+    "opportunity_score": 39588.2,
+    "category": "psalms",
+    "type": "psalm",
+    "secondary_keywords": [
+      "psalm 91 king james",
+      "king james psalm 91",
+      "prayers psalm 91"
+    ],
+    "slug_hint": "psalm-91",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 1
+  },
+  {
+    "keyword": "psalm 23",
+    "volume": 673000,
+    "difficulty": 63,
+    "opportunity_score": 10682.5,
+    "category": "psalms",
+    "type": "psalm",
+    "secondary_keywords": [
+      "psalm 23 king james",
+      "psalm 23 in kjv",
+      "lord is my shepherd psalm 23"
+    ],
+    "slug_hint": "psalm-23",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 2
+  },
+  {
+    "keyword": "bible verses about love",
+    "volume": 165000,
+    "difficulty": 27,
+    "opportunity_score": 6111.1,
+    "category": "bible-verses",
+    "type": "verses",
+    "secondary_keywords": [],
+    "slug_hint": "bible-verses-about-love",
+    "upgrade": true,
+    "used": false,
+    "queue_position": 3
+  },
+  {
+    "keyword": "bible verses about encouragement",
+    "volume": 135000,
+    "difficulty": 27,
+    "opportunity_score": 5000.0,
+    "category": "bible-verses",
+    "type": "verses",
+    "secondary_keywords": [],
+    "slug_hint": "bible-verses-about-encouragement",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 4
+  },
+  {
+    "keyword": "prayer to saint michael the archangel",
+    "volume": 135000,
+    "difficulty": 34,
+    "opportunity_score": 3970.6,
+    "category": "protection-prayer",
+    "type": "traditional",
+    "secondary_keywords": [
+      "the prayer to saint michael",
+      "prayer to saint michael catholic"
+    ],
+    "slug_hint": "saint-michael-prayer",
+    "upgrade": true,
+    "used": false,
+    "queue_position": 5
+  },
+  {
+    "keyword": "hail mary prayer",
+    "volume": 135000,
+    "difficulty": 44,
+    "opportunity_score": 3068.2,
+    "category": "saint-prayers",
+    "type": "traditional",
+    "secondary_keywords": [
+      "prayer for hail mary"
+    ],
+    "slug_hint": "hail-mary-prayer",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 6
+  },
+  {
+    "keyword": "psalm 121",
+    "volume": 135000,
+    "difficulty": 51,
+    "opportunity_score": 2647.1,
+    "category": "psalms",
+    "type": "psalm",
+    "secondary_keywords": [
+      "king james psalm 121",
+      "psalm 121 kjv"
+    ],
+    "slug_hint": "psalm-121",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 7
+  },
+  {
+    "keyword": "bible verses about anxiety",
+    "volume": 49500,
+    "difficulty": 19,
+    "opportunity_score": 2605.3,
+    "category": "bible-verses",
+    "type": "verses",
+    "secondary_keywords": [
+      "bible verses about worrying",
+      "bible verses about worry"
+    ],
+    "slug_hint": "bible-verses-about-anxiety",
+    "upgrade": true,
+    "used": false,
+    "queue_position": 8
+  },
+  {
+    "keyword": "psalm 35",
+    "volume": 90500,
+    "difficulty": 35,
+    "opportunity_score": 2585.7,
+    "category": "psalms",
+    "type": "psalm",
+    "secondary_keywords": [],
+    "slug_hint": "psalm-35",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 9
+  },
+  {
+    "keyword": "bible verses about strength",
+    "volume": 90500,
+    "difficulty": 37,
+    "opportunity_score": 2445.9,
+    "category": "bible-verses",
+    "type": "verses",
+    "secondary_keywords": [
+      "bible verses about strength in hard times"
+    ],
+    "slug_hint": "bible-verses-about-strength",
+    "upgrade": true,
+    "used": false,
+    "queue_position": 10
+  },
+  {
+    "keyword": "chaplet of divine mercy",
+    "volume": 49500,
+    "difficulty": 21,
+    "opportunity_score": 2357.1,
+    "category": "saint-prayers",
+    "type": "traditional",
+    "secondary_keywords": [
+      "prayer for divine mercy chaplet",
+      "rosary divine mercy"
+    ],
+    "slug_hint": "chaplet-of-divine-mercy",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 11
+  },
+  {
+    "keyword": "prayer for strength",
+    "volume": 60500,
+    "difficulty": 26,
+    "opportunity_score": 2326.9,
+    "category": "peace-prayer",
+    "type": "prayer",
+    "secondary_keywords": [
+      "prayer for the strength"
+    ],
+    "slug_hint": "prayer-for-strength",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 12
+  },
+  {
+    "keyword": "psalm 27",
+    "volume": 135000,
+    "difficulty": 62,
+    "opportunity_score": 2177.4,
+    "category": "psalms",
+    "type": "psalm",
+    "secondary_keywords": [
+      "psalm 27 king james version"
+    ],
+    "slug_hint": "psalm-27",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 13
+  },
+  {
+    "keyword": "bible verses about healing",
+    "volume": 49500,
+    "difficulty": 25,
+    "opportunity_score": 1980.0,
+    "category": "bible-verses",
+    "type": "verses",
+    "secondary_keywords": [
+      "kjv bible verses about healing",
+      "bible verses about healing the sick"
+    ],
+    "slug_hint": "bible-verses-about-healing",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 14
+  },
+  {
+    "keyword": "bible verses about fruit of the spirit",
+    "volume": 33100,
+    "difficulty": 18,
+    "opportunity_score": 1838.9,
+    "category": "bible-verses",
+    "type": "verses",
+    "secondary_keywords": [],
+    "slug_hint": "bible-verses-about-fruit-of-the-spirit",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 15
+  },
+  {
+    "keyword": "bible verses about friendship",
+    "volume": 49500,
+    "difficulty": 27,
+    "opportunity_score": 1833.3,
+    "category": "bible-verses",
+    "type": "verses",
+    "secondary_keywords": [],
+    "slug_hint": "bible-verses-about-friendship",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 16
+  },
+  {
+    "keyword": "novena to st jude",
+    "volume": 18100,
+    "difficulty": 11,
+    "opportunity_score": 1645.5,
+    "category": "novenas",
+    "type": "novena",
+    "secondary_keywords": [
+      "novena of st jude",
+      "novena to saint jude"
+    ],
+    "slug_hint": "novena-to-st-jude",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 17
+  },
+  {
+    "keyword": "prayer for a family",
+    "volume": 18100,
+    "difficulty": 11,
+    "opportunity_score": 1645.5,
+    "category": "protection-prayer",
+    "type": "prayer",
+    "secondary_keywords": [
+      "catholic prayers family"
+    ],
+    "slug_hint": "prayer-for-a-family",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 18
+  },
+  {
+    "keyword": "prayer for forgiveness of sins",
+    "volume": 22200,
+    "difficulty": 14,
+    "opportunity_score": 1585.7,
+    "category": "peace-prayer",
+    "type": "prayer",
+    "secondary_keywords": [
+      "prayer for repentance",
+      "prayer for sinners"
+    ],
+    "slug_hint": "prayer-for-forgiveness-of-sins",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 19
+  },
+  {
+    "keyword": "psalm 103",
+    "volume": 49500,
+    "difficulty": 33,
+    "opportunity_score": 1500.0,
+    "category": "psalms",
+    "type": "psalm",
+    "secondary_keywords": [],
+    "slug_hint": "psalm-103",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 20
+  },
+  {
+    "keyword": "divine mercy novena",
+    "volume": 14800,
+    "difficulty": 10,
+    "opportunity_score": 1480.0,
+    "category": "novenas",
+    "type": "novena",
+    "secondary_keywords": [
+      "divine of mercy novena"
+    ],
+    "slug_hint": "divine-mercy-novena",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 21
+  },
+  {
+    "keyword": "psalm 22",
+    "volume": 60500,
+    "difficulty": 45,
+    "opportunity_score": 1344.4,
+    "category": "psalms",
+    "type": "psalm",
+    "secondary_keywords": [],
+    "slug_hint": "psalm-22",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 22
+  },
+  {
+    "keyword": "prayer to the holy spirit",
+    "volume": 12100,
+    "difficulty": 9,
+    "opportunity_score": 1344.4,
+    "category": "saint-prayers",
+    "type": "traditional",
+    "secondary_keywords": [
+      "prayer for the holy spirit",
+      "come holy spirit prayer"
+    ],
+    "slug_hint": "prayer-to-the-holy-spirit",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 23
+  },
+  {
+    "keyword": "catholic prayers for night",
+    "volume": 9900,
+    "difficulty": 8,
+    "opportunity_score": 1237.5,
+    "category": "night-prayer",
+    "type": "prayer",
+    "secondary_keywords": [
+      "catholic prayers before bed",
+      "catholic prayers before sleep"
+    ],
+    "slug_hint": "catholic-prayers-for-night",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 24
+  },
+  {
+    "keyword": "prayer for safe travel",
+    "volume": 9900,
+    "difficulty": 8,
+    "opportunity_score": 1237.5,
+    "category": "protection-prayer",
+    "type": "prayer",
+    "secondary_keywords": [
+      "prayer for travel safe"
+    ],
+    "slug_hint": "prayer-for-safe-travel",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 25
+  },
+  {
+    "keyword": "bible verses about being thankful",
+    "volume": 22200,
+    "difficulty": 18,
+    "opportunity_score": 1233.3,
+    "category": "bible-verses",
+    "type": "verses",
+    "secondary_keywords": [
+      "bible verses about thankfulness",
+      "bible verses about thanksgiving"
+    ],
+    "slug_hint": "bible-verses-about-being-thankful",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 26
+  },
+  {
+    "keyword": "novena of surrender",
+    "volume": 27100,
+    "difficulty": 22,
+    "opportunity_score": 1231.8,
+    "category": "novenas",
+    "type": "novena",
+    "secondary_keywords": [],
+    "slug_hint": "novena-of-surrender",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 27
+  },
+  {
+    "keyword": "prayer for good night",
+    "volume": 14800,
+    "difficulty": 13,
+    "opportunity_score": 1138.5,
+    "category": "night-prayer",
+    "type": "prayer",
+    "secondary_keywords": [],
+    "slug_hint": "prayer-for-good-night",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 28
+  },
+  {
+    "keyword": "bible verses about mothers",
+    "volume": 18100,
+    "difficulty": 16,
+    "opportunity_score": 1131.2,
+    "category": "bible-verses",
+    "type": "verses",
+    "secondary_keywords": [
+      "bible verses about mother's"
+    ],
+    "slug_hint": "bible-verses-about-mothers",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 29
+  },
+  {
+    "keyword": "bible verses about relationships",
+    "volume": 27100,
+    "difficulty": 24,
+    "opportunity_score": 1129.2,
+    "category": "bible-verses",
+    "type": "verses",
+    "secondary_keywords": [
+      "bible verses about relationship"
+    ],
+    "slug_hint": "bible-verses-about-relationships",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 30
+  },
+  {
+    "keyword": "prayer to saint jude",
+    "volume": 27100,
+    "difficulty": 25,
+    "opportunity_score": 1084.0,
+    "category": "saint-prayers",
+    "type": "traditional",
+    "secondary_keywords": [
+      "prayer for st jude"
+    ],
+    "slug_hint": "prayer-to-saint-jude",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 31
+  },
+  {
+    "keyword": "catholic morning prayers",
+    "volume": 27100,
+    "difficulty": 25,
+    "opportunity_score": 1084.0,
+    "category": "morning-prayer",
+    "type": "prayer",
+    "secondary_keywords": [
+      "catholic prayers for morning",
+      "catholic prayer for morning"
+    ],
+    "slug_hint": "catholic-morning-prayers",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 32
+  },
+  {
+    "keyword": "prayer to saint anthony",
+    "volume": 14800,
+    "difficulty": 14,
+    "opportunity_score": 1057.1,
+    "category": "saint-prayers",
+    "type": "traditional",
+    "secondary_keywords": [
+      "prayer to saint anthony for lost things",
+      "unfailing prayer to saint anthony"
+    ],
+    "slug_hint": "prayer-to-saint-anthony",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 33
+  },
+  {
+    "keyword": "psalm 139",
+    "volume": 74000,
+    "difficulty": 71,
+    "opportunity_score": 1042.3,
+    "category": "psalms",
+    "type": "psalm",
+    "secondary_keywords": [
+      "psalm 139 14"
+    ],
+    "slug_hint": "psalm-139",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 34
+  },
+  {
+    "keyword": "bible verses about forgiveness",
+    "volume": 33100,
+    "difficulty": 32,
+    "opportunity_score": 1034.4,
+    "category": "bible-verses",
+    "type": "verses",
+    "secondary_keywords": [],
+    "slug_hint": "bible-verses-about-forgiveness",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 35
+  },
+  {
+    "keyword": "bible verses about communion",
+    "volume": 33100,
+    "difficulty": 32,
+    "opportunity_score": 1034.4,
+    "category": "bible-verses",
+    "type": "verses",
+    "secondary_keywords": [],
+    "slug_hint": "bible-verses-about-communion",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 36
+  },
+  {
+    "keyword": "bible verses about a broken heart",
+    "volume": 9900,
+    "difficulty": 10,
+    "opportunity_score": 990.0,
+    "category": "bible-verses",
+    "type": "verses",
+    "secondary_keywords": [],
+    "slug_hint": "bible-verses-about-a-broken-heart",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 37
+  },
+  {
+    "keyword": "bible verses about hard work",
+    "volume": 9900,
+    "difficulty": 10,
+    "opportunity_score": 990.0,
+    "category": "bible-verses",
+    "type": "verses",
+    "secondary_keywords": [
+      "bible verses about working hard"
+    ],
+    "slug_hint": "bible-verses-about-hard-work",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 38
+  },
+  {
+    "keyword": "bible verses about loving your enemies",
+    "volume": 6600,
+    "difficulty": 7,
+    "opportunity_score": 942.9,
+    "category": "bible-verses",
+    "type": "verses",
+    "secondary_keywords": [],
+    "slug_hint": "bible-verses-about-loving-your-enemies",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 39
+  },
+  {
+    "keyword": "psalm 34",
+    "volume": 60500,
+    "difficulty": 65,
+    "opportunity_score": 930.8,
+    "category": "psalms",
+    "type": "psalm",
+    "secondary_keywords": [
+      "psalm 34 18"
+    ],
+    "slug_hint": "psalm-34",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 40
+  },
+  {
+    "keyword": "bible verses about trust in god",
+    "volume": 14800,
+    "difficulty": 16,
+    "opportunity_score": 925.0,
+    "category": "bible-verses",
+    "type": "verses",
+    "secondary_keywords": [
+      "bible verses about trusting god"
+    ],
+    "slug_hint": "bible-verses-about-trust-in-god",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 41
+  },
+  {
+    "keyword": "bible verses about anger",
+    "volume": 9900,
+    "difficulty": 11,
+    "opportunity_score": 900.0,
+    "category": "bible-verses",
+    "type": "verses",
+    "secondary_keywords": [],
+    "slug_hint": "bible-verses-about-anger",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 42
+  },
+  {
+    "keyword": "bible verses for athletes",
+    "volume": 9900,
+    "difficulty": 11,
+    "opportunity_score": 900.0,
+    "category": "bible-verses",
+    "type": "verses",
+    "secondary_keywords": [
+      "bible verses about athletes",
+      "bible verses about sports"
+    ],
+    "slug_hint": "bible-verses-for-athletes",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 43
+  },
+  {
+    "keyword": "prayer for peacefulness",
+    "volume": 22200,
+    "difficulty": 25,
+    "opportunity_score": 888.0,
+    "category": "peace-prayer",
+    "type": "prayer",
+    "secondary_keywords": [],
+    "slug_hint": "prayer-for-peacefulness",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 44
+  },
+  {
+    "keyword": "bible verses about marriage",
+    "volume": 27100,
+    "difficulty": 31,
+    "opportunity_score": 874.2,
+    "category": "bible-verses",
+    "type": "verses",
+    "secondary_keywords": [
+      "love bible verses about marriage"
+    ],
+    "slug_hint": "bible-verses-about-marriage",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 45
+  },
+  {
+    "keyword": "prayer to saint padre pio",
+    "volume": 14800,
+    "difficulty": 17,
+    "opportunity_score": 870.6,
+    "category": "saint-prayers",
+    "type": "traditional",
+    "secondary_keywords": [
+      "padre pio prayer for healing"
+    ],
+    "slug_hint": "prayer-to-saint-padre-pio",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 46
+  },
+  {
+    "keyword": "bible verses about prayer",
+    "volume": 18100,
+    "difficulty": 21,
+    "opportunity_score": 861.9,
+    "category": "bible-verses",
+    "type": "verses",
+    "secondary_keywords": [
+      "bible verses about praying",
+      "bible verses about prayers"
+    ],
+    "slug_hint": "bible-verses-about-prayer",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 47
+  },
+  {
+    "keyword": "prayer for thanksgiving",
+    "volume": 22200,
+    "difficulty": 26,
+    "opportunity_score": 853.8,
+    "category": "morning-prayer",
+    "type": "prayer",
+    "secondary_keywords": [
+      "prayer for thanksgiving day",
+      "catholic prayers of thanksgiving"
+    ],
+    "slug_hint": "prayer-for-thanksgiving",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 48
+  },
+  {
+    "keyword": "bible verses about grief",
+    "volume": 18100,
+    "difficulty": 22,
+    "opportunity_score": 822.7,
+    "category": "bible-verses",
+    "type": "verses",
+    "secondary_keywords": [
+      "bible verses about death",
+      "bible verses about death of loved ones"
+    ],
+    "slug_hint": "bible-verses-about-grief",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 49
+  },
+  {
+    "keyword": "bible verses about life",
+    "volume": 18100,
+    "difficulty": 22,
+    "opportunity_score": 822.7,
+    "category": "bible-verses",
+    "type": "verses",
+    "secondary_keywords": [],
+    "slug_hint": "bible-verses-about-life",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 50
+  },
+  {
+    "keyword": "prayer for intercession",
+    "volume": 14800,
+    "difficulty": 18,
+    "opportunity_score": 822.2,
+    "category": "peace-prayer",
+    "type": "prayer",
+    "secondary_keywords": [
+      "prayer for interceding"
+    ],
+    "slug_hint": "prayer-for-intercession",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 51
+  },
+  {
+    "keyword": "psalm 100",
+    "volume": 49500,
+    "difficulty": 61,
+    "opportunity_score": 811.5,
+    "category": "psalms",
+    "type": "psalm",
+    "secondary_keywords": [],
+    "slug_hint": "psalm-100",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 52
+  },
+  {
+    "keyword": "mary undoer of knots novena",
+    "volume": 5400,
+    "difficulty": 7,
+    "opportunity_score": 771.4,
+    "category": "novenas",
+    "type": "novena",
+    "secondary_keywords": [
+      "mary who unties knots novena"
+    ],
+    "slug_hint": "mary-undoer-of-knots-novena",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 53
+  },
+  {
+    "keyword": "prayer to saint raphael the archangel",
+    "volume": 9900,
+    "difficulty": 13,
+    "opportunity_score": 761.5,
+    "category": "saint-prayers",
+    "type": "traditional",
+    "secondary_keywords": [
+      "prayer to saint raphael",
+      "prayer to saint raphael for healing"
+    ],
+    "slug_hint": "prayer-to-saint-raphael-the-archangel",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 54
+  },
+  {
+    "keyword": "bible verses about hope",
+    "volume": 18100,
+    "difficulty": 24,
+    "opportunity_score": 754.2,
+    "category": "bible-verses",
+    "type": "verses",
+    "secondary_keywords": [],
+    "slug_hint": "bible-verses-about-hope",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 55
+  },
+  {
+    "keyword": "catholic prayer before meals",
+    "volume": 8100,
+    "difficulty": 11,
+    "opportunity_score": 736.4,
+    "category": "morning-prayer",
+    "type": "traditional",
+    "secondary_keywords": [
+      "catholic prayer before eating",
+      "simple prayer before meals",
+      "grace prayer before meal"
+    ],
+    "slug_hint": "catholic-prayer-before-meals",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 56
+  },
+  {
+    "keyword": "act of contrition",
+    "volume": 33100,
+    "difficulty": 47,
+    "opportunity_score": 704.3,
+    "category": "saint-prayers",
+    "type": "traditional",
+    "secondary_keywords": [
+      "prayer for contrition",
+      "catholic prayers act of contrition"
+    ],
+    "slug_hint": "act-of-contrition",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 57
+  },
+  {
+    "keyword": "psalm 46",
+    "volume": 40500,
+    "difficulty": 59,
+    "opportunity_score": 686.4,
+    "category": "psalms",
+    "type": "psalm",
+    "secondary_keywords": [
+      "psalm 46 10",
+      "psalm 46 1"
+    ],
+    "slug_hint": "psalm-46",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 58
+  },
+  {
+    "keyword": "prayer for a friend",
+    "volume": 12100,
+    "difficulty": 18,
+    "opportunity_score": 672.2,
+    "category": "healing-prayer",
+    "type": "prayer",
+    "secondary_keywords": [
+      "prayer for friends"
+    ],
+    "slug_hint": "prayer-for-a-friend",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 59
+  },
+  {
+    "keyword": "short prayer before bed",
+    "volume": 4400,
+    "difficulty": 7,
+    "opportunity_score": 628.6,
+    "category": "night-prayer",
+    "type": "prayer",
+    "secondary_keywords": [
+      "night prayer before sleep",
+      "prayer before bed"
+    ],
+    "slug_hint": "short-prayer-before-bed",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 60
+  },
+  {
+    "keyword": "novena to saint joseph",
+    "volume": 9900,
+    "difficulty": 16,
+    "opportunity_score": 618.8,
+    "category": "novenas",
+    "type": "novena",
+    "secondary_keywords": [
+      "novena st joseph",
+      "novena to st joseph"
+    ],
+    "slug_hint": "novena-to-saint-joseph",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 61
+  },
+  {
+    "keyword": "bible verses about joy",
+    "volume": 12100,
+    "difficulty": 20,
+    "opportunity_score": 605.0,
+    "category": "bible-verses",
+    "type": "verses",
+    "secondary_keywords": [],
+    "slug_hint": "bible-verses-about-joy",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 62
+  },
+  {
+    "keyword": "prayer for miracles",
+    "volume": 12100,
+    "difficulty": 21,
+    "opportunity_score": 576.2,
+    "category": "healing-prayer",
+    "type": "prayer",
+    "secondary_keywords": [],
+    "slug_hint": "prayer-for-miracles",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 63
+  },
+  {
+    "keyword": "what is a novena",
+    "volume": 4400,
+    "difficulty": 8,
+    "opportunity_score": 550.0,
+    "category": "novenas",
+    "type": "prayer",
+    "secondary_keywords": [
+      "novena what is it",
+      "pray a novena"
+    ],
+    "slug_hint": "what-is-a-novena",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 64
+  },
+  {
+    "keyword": "prayer for salvation",
+    "volume": 14800,
+    "difficulty": 27,
+    "opportunity_score": 548.1,
+    "category": "peace-prayer",
+    "type": "prayer",
+    "secondary_keywords": [
+      "sinners prayer for salvation"
+    ],
+    "slug_hint": "prayer-for-salvation",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 65
+  },
+  {
+    "keyword": "novena of the miraculous medal",
+    "volume": 5400,
+    "difficulty": 10,
+    "opportunity_score": 540.0,
+    "category": "novenas",
+    "type": "novena",
+    "secondary_keywords": [
+      "novena of miraculous medal"
+    ],
+    "slug_hint": "novena-of-the-miraculous-medal",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 66
+  },
+  {
+    "keyword": "bible verses about protection",
+    "volume": 18100,
+    "difficulty": 34,
+    "opportunity_score": 532.4,
+    "category": "bible-verses",
+    "type": "verses",
+    "secondary_keywords": [],
+    "slug_hint": "bible-verses-about-protection",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 67
+  },
+  {
+    "keyword": "bible verses about peace",
+    "volume": 12100,
+    "difficulty": 24,
+    "opportunity_score": 504.2,
+    "category": "bible-verses",
+    "type": "verses",
+    "secondary_keywords": [],
+    "slug_hint": "bible-verses-about-peace",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 68
+  },
+  {
+    "keyword": "bible verses about humility",
+    "volume": 12100,
+    "difficulty": 25,
+    "opportunity_score": 484.0,
+    "category": "bible-verses",
+    "type": "verses",
+    "secondary_keywords": [],
+    "slug_hint": "bible-verses-about-humility",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 69
+  },
+  {
+    "keyword": "prayer for birthday",
+    "volume": 9900,
+    "difficulty": 23,
+    "opportunity_score": 430.4,
+    "category": "morning-prayer",
+    "type": "prayer",
+    "secondary_keywords": [],
+    "slug_hint": "prayer-for-birthday",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 70
+  },
+  {
+    "keyword": "prayer before surgery",
+    "volume": 12100,
+    "difficulty": 33,
+    "opportunity_score": 366.7,
+    "category": "healing-prayer",
+    "type": "prayer",
+    "secondary_keywords": [
+      "prayer before operation",
+      "prayer for the operation"
+    ],
+    "slug_hint": "prayer-before-surgery",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 71
+  },
+  {
+    "keyword": "bible verses about family",
+    "volume": 12100,
+    "difficulty": 34,
+    "opportunity_score": 355.9,
+    "category": "bible-verses",
+    "type": "verses",
+    "secondary_keywords": [],
+    "slug_hint": "bible-verses-about-family",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 72
+  },
+  {
+    "keyword": "bible verses about the holy spirit",
+    "volume": 9900,
+    "difficulty": 34,
+    "opportunity_score": 291.2,
+    "category": "bible-verses",
+    "type": "verses",
+    "secondary_keywords": [],
+    "slug_hint": "bible-verses-about-the-holy-spirit",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 73
+  },
+  {
+    "keyword": "prayer before confession",
+    "volume": 3600,
+    "difficulty": 13,
+    "opportunity_score": 276.9,
+    "category": "saint-prayers",
+    "type": "traditional",
+    "secondary_keywords": [
+      "catholic prayers for confession"
+    ],
+    "slug_hint": "prayer-before-confession",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 74
+  },
+  {
+    "keyword": "st peregrine novena",
+    "volume": 4400,
+    "difficulty": 16,
+    "opportunity_score": 275.0,
+    "category": "novenas",
+    "type": "novena",
+    "secondary_keywords": [
+      "novena st peregrine"
+    ],
+    "slug_hint": "st-peregrine-novena",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 75
+  },
+  {
+    "keyword": "sacred heart novena",
+    "volume": 6600,
+    "difficulty": 26,
+    "opportunity_score": 253.8,
+    "category": "novenas",
+    "type": "novena",
+    "secondary_keywords": [
+      "novena to the sacred heart of jesus"
+    ],
+    "slug_hint": "sacred-heart-novena",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 76
+  },
+  {
+    "keyword": "st therese novena",
+    "volume": 6600,
+    "difficulty": 26,
+    "opportunity_score": 253.8,
+    "category": "novenas",
+    "type": "novena",
+    "secondary_keywords": [
+      "novena of st therese",
+      "st therese of lisieux novena"
+    ],
+    "slug_hint": "st-therese-novena",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 77
+  },
+  {
+    "keyword": "mother of perpetual help novena",
+    "volume": 5400,
+    "difficulty": 22,
+    "opportunity_score": 245.5,
+    "category": "novenas",
+    "type": "novena",
+    "secondary_keywords": [
+      "novena mother perpetual help"
+    ],
+    "slug_hint": "mother-of-perpetual-help-novena",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 78
+  },
+  {
+    "keyword": "prayer for fasting",
+    "volume": 9900,
+    "difficulty": 41,
+    "opportunity_score": 241.5,
+    "category": "peace-prayer",
+    "type": "prayer",
+    "secondary_keywords": [],
+    "slug_hint": "prayer-for-fasting",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 79
+  },
+  {
+    "keyword": "catholic prayers for the dead",
+    "volume": 8100,
+    "difficulty": 35,
+    "opportunity_score": 231.4,
+    "category": "healing-prayer",
+    "type": "traditional",
+    "secondary_keywords": [
+      "prayer for the death"
+    ],
+    "slug_hint": "catholic-prayers-for-the-dead",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 80
+  },
+  {
+    "keyword": "st andrew christmas novena",
+    "volume": 5400,
+    "difficulty": 24,
+    "opportunity_score": 225.0,
+    "category": "novenas",
+    "type": "novena",
+    "secondary_keywords": [
+      "novena st andrew"
+    ],
+    "slug_hint": "st-andrew-christmas-novena",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 81
+  },
+  {
+    "keyword": "prayer to saint joseph of cupertino",
+    "volume": 3600,
+    "difficulty": 17,
+    "opportunity_score": 211.8,
+    "category": "saint-prayers",
+    "type": "traditional",
+    "secondary_keywords": [],
+    "slug_hint": "prayer-to-saint-joseph-of-cupertino",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 82
+  },
+  {
+    "keyword": "prayer to saint gabriel the archangel",
+    "volume": 3600,
+    "difficulty": 18,
+    "opportunity_score": 200.0,
+    "category": "saint-prayers",
+    "type": "traditional",
+    "secondary_keywords": [
+      "prayer to saint gabriel"
+    ],
+    "slug_hint": "prayer-to-saint-gabriel-the-archangel",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 83
+  },
+  {
+    "keyword": "54 day rosary novena",
+    "volume": 5400,
+    "difficulty": 29,
+    "opportunity_score": 186.2,
+    "category": "novenas",
+    "type": "novena",
+    "secondary_keywords": [
+      "rosary novena 54 day"
+    ],
+    "slug_hint": "54-day-rosary-novena",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 84
+  },
+  {
+    "keyword": "prayer to saint dymphna",
+    "volume": 3600,
+    "difficulty": 21,
+    "opportunity_score": 171.4,
+    "category": "saint-prayers",
+    "type": "traditional",
+    "secondary_keywords": [],
+    "slug_hint": "prayer-to-saint-dymphna",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 85
+  },
+  {
+    "keyword": "st anne novena",
+    "volume": 4400,
+    "difficulty": 31,
+    "opportunity_score": 141.9,
+    "category": "novenas",
+    "type": "novena",
+    "secondary_keywords": [
+      "novena for st anne"
+    ],
+    "slug_hint": "st-anne-novena",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 86
+  },
+  {
+    "keyword": "prayer to saint rita",
+    "volume": 3600,
+    "difficulty": 26,
+    "opportunity_score": 138.5,
+    "category": "saint-prayers",
+    "type": "traditional",
+    "secondary_keywords": [
+      "prayer to saint rita for impossible cases"
+    ],
+    "slug_hint": "prayer-to-saint-rita",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 87
+  },
+  {
+    "keyword": "prayer to saint benedict",
+    "volume": 1300,
+    "difficulty": 10,
+    "opportunity_score": 130.0,
+    "category": "saint-prayers",
+    "type": "traditional",
+    "secondary_keywords": [
+      "prayer to saint benedict for protection"
+    ],
+    "slug_hint": "prayer-to-saint-benedict",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 88
+  },
+  {
+    "keyword": "prayer to saint anne",
+    "volume": 1600,
+    "difficulty": 13,
+    "opportunity_score": 123.1,
+    "category": "saint-prayers",
+    "type": "traditional",
+    "secondary_keywords": [],
+    "slug_hint": "prayer-to-saint-anne",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 89
+  },
+  {
+    "keyword": "prayer before reading the bible",
+    "volume": 2400,
+    "difficulty": 23,
+    "opportunity_score": 104.3,
+    "category": "bible-verses",
+    "type": "prayer",
+    "secondary_keywords": [],
+    "slug_hint": "prayer-before-reading-the-bible",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 90
+  },
+  {
+    "keyword": "prayer to saint joseph",
+    "volume": 3600,
+    "difficulty": 35,
+    "opportunity_score": 102.9,
+    "category": "saint-prayers",
+    "type": "traditional",
+    "secondary_keywords": [
+      "prayer to saint joseph to sell house",
+      "ancient prayer to saint joseph"
+    ],
+    "slug_hint": "prayer-to-saint-joseph",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 91
+  },
+  {
+    "keyword": "prayer before work",
+    "volume": 2400,
+    "difficulty": 32,
+    "opportunity_score": 75.0,
+    "category": "morning-prayer",
+    "type": "prayer",
+    "secondary_keywords": [],
+    "slug_hint": "prayer-before-work",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 92
+  },
+  {
+    "keyword": "prayer to saint lucy",
+    "volume": 1900,
+    "difficulty": 29,
+    "opportunity_score": 65.5,
+    "category": "saint-prayers",
+    "type": "traditional",
+    "secondary_keywords": [],
+    "slug_hint": "prayer-to-saint-lucy",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 93
+  },
+  {
+    "keyword": "prayer to saint christopher",
+    "volume": 880,
+    "difficulty": 15,
+    "opportunity_score": 58.7,
+    "category": "saint-prayers",
+    "type": "traditional",
+    "secondary_keywords": [],
+    "slug_hint": "prayer-to-saint-christopher",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 94
+  },
+  {
+    "keyword": "prayer to saint monica",
+    "volume": 1900,
+    "difficulty": 33,
+    "opportunity_score": 57.6,
+    "category": "saint-prayers",
+    "type": "traditional",
+    "secondary_keywords": [],
+    "slug_hint": "prayer-to-saint-monica",
+    "upgrade": false,
+    "used": false,
+    "queue_position": 95
+  }
+]

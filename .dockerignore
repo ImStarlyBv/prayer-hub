@@ -1,0 +1,10 @@
+node_modules
+_site
+_publish
+_publish.log
+data
+social
+.git
+content/api
+drafts/
+backups/

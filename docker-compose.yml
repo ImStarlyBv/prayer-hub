@@ -1,6 +1,38 @@
 services:
+  # Caddy serves the pre-rendered static site from the shared volume and proxies
+  # only /api/ to the publisher. Visitors never touch Node. The service keeps its
+  # original name because Coolify attaches the domain to it.
   prayerhub:
     build: .
     expose:
       - "80"
+    volumes:
+      - site:/srv/site
+    depends_on:
+      - publisher
     restart: unless-stopped
+
+  # Publisher: on start it rebuilds the whole site into the shared volume; on each
+  # API call it stores the prayer JSON, rebuilds into a new release and atomically
+  # switches Caddy to it. See PUBLISHING.md.
+  publisher:
+    build:
+      context: .
+      dockerfile: publisher/Dockerfile
+    environment:
+      # Set in Coolify's environment variables. Never commit it. Without it the
+      # API answers 503 and the site still serves normally.
+      - PUBLISH_TOKEN=${PUBLISH_TOKEN:-}
+      - SITE_URL=${SITE_URL:-https://prayerhub.space}
+      - SITE_ROOT=/srv/site
+      - PRAYER_DATA_DIR=/srv/data
+    volumes:
+      - site:/srv/site
+      # Bind mount: prayer + category JSON published through the API (the source
+      # of truth). Kept host-visible so backing it up is a plain `cp`, same as
+      # mobilepanels' app/data.
+      - ./data:/srv/data
+    restart: unless-stopped
+
+volumes:
+  site:

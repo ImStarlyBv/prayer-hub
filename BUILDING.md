@@ -4,6 +4,8 @@ This is an Eleventy (11ty) static site. Nothing runs at request time — every p
 the sitemap, and the RSS feeds are generated at build time and served as plain
 files. To add content, add a file and rebuild.
 
+> **New prayers normally go live through the publisher API.** See [PUBLISHING.md](PUBLISHING.md). Adding a markdown file by hand, as described below, still works.
+
 ## Adding a prayer
 
 Every prayer is one markdown file in `content/prayers/`. Filename doesn't matter
@@ -35,7 +37,7 @@ Required fields:
 |---|---|
 | `title` | Page `<h1>` and `<title>` tag |
 | `slug` | Used in the URL via `permalink` |
-| `category` | Must match a `slug` in `_data/categories.json` — decides which hub page it appears on and which nav link it's under |
+| `category` | Must match a `slug` in `_data/categoryList.json` — decides which hub page it appears on and which nav link it's under |
 | `excerpt` | Meta description + the line shown in listing pages |
 | `dateAdded` | Not currently displayed, kept for reference |
 | `dateModified` | Drives `<lastmod>` in the sitemap and `pubDate` in the RSS feeds — **update this whenever you edit a prayer's text** |
@@ -45,7 +47,7 @@ signal the sitemap and feeds are built around.
 
 ## Adding a category
 
-Categories live in `_data/categories.json`. Each one auto-generates a hub page at
+Categories live in `_data/categoryList.json` (API-added ones merge in via `_data/categories.js`). Each one auto-generates a hub page at
 `/{slug}/` listing every prayer whose `category` field matches, and a link in the
 site nav. To add one:
 
@@ -172,6 +174,9 @@ npm run serve       # build + serve locally with live reload
 ```
 
 ## Deploying
+
+The app runs as two services (Caddy and the publisher). See [PUBLISHING.md](PUBLISHING.md#7-deploying-the-publisher-coolify-one-time).
+
 
 Push to `main`. Coolify watches the repo and rebuilds the Docker image
 (`Dockerfile` → static build → Caddy serving `_site/` on port 80) automatically.

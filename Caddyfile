@@ -1,6 +1,29 @@
 :80 {
-	root * /srv
-	file_server
 	encode gzip
-	try_files {path} {path}/index.html =404
+
+	# Only /api/ leaves Caddy; everything else is static files.
+	handle /api/* {
+		reverse_proxy {$PUBLISHER_UPSTREAM:publisher:8000}
+	}
+
+	handle {
+		# `current` is a symlink the publisher swaps atomically to each new release.
+		root * /srv/site/current
+		header /css/* Cache-Control "public, max-age=86400"
+		header /images/* Cache-Control "public, max-age=604800"
+		# Directory without trailing slash -> 308 to the canonical /path/ URL.
+		@noslash {
+			not path */
+			file {path}/index.html
+		}
+		redir @noslash {path}/ 308
+		try_files {path} {path}/index.html
+		file_server
+	}
+
+	handle_errors 404 {
+		root * /srv/site/current
+		rewrite * /404.html
+		file_server
+	}
 }

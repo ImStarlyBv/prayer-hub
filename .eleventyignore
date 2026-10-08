@@ -1,1 +1,13 @@
 keywords.md
+README.md
+BUILDING.md
+SEO-PLAN.md
+PUBLISHING.md
+publisher/
+data/
+node_modules/
+_publish/
+_site/
+social/
+drafts/
+backups/

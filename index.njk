@@ -12,7 +12,7 @@ description: "A daily-updated library of Catholic prayers — morning, night, an
 <section>
   <h2 class="section-heading"><span class="cross">✠</span> Collections <span class="cross">✠</span></h2>
   <div class="categories">
-    {% for cat in categories %}
+    {% for cat in categories | populated(collections.prayers) %}
     <a class="category-card" href="/{{ cat.slug }}/" aria-label="{{ cat.title }}">
       <span class="category-left">
         <span class="icon">{{ cat.icon }}</span>

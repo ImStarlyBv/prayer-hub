@@ -1,21 +1,125 @@
 ---
 layout: layouts/base.njk
 ---
+{%- set catInfo = null -%}
+{%- for c in categories %}{% if c.slug == category %}{% set catInfo = c %}{% endif %}{% endfor -%}
 <div class="prayer-frame">
   <article class="prayer-frame-inner">
-    {% for cat in categories %}{% if cat.slug == category %}
-    <p class="breadcrumb"><a href="/{{ category }}/">&lsaquo; {{ cat.title }}</a></p>
-    {% endif %}{% endfor %}
+    {% if catInfo %}
+    <p class="breadcrumb"><a href="/{{ category }}/">&lsaquo; {{ catInfo.title }}</a></p>
+    {% endif %}
 
     <div class="fleuron-divider" style="margin-top:0;">❦ ✠ ❦</div>
 
     <h1>{{ title }}</h1>
     {% if excerpt %}<p class="excerpt">{{ excerpt }}</p>{% endif %}
 
+    {% if traditional and traditional.text %}
+    <section class="prayer-body">
+      <h2 class="prayer-heading">{{ traditional.title or "The Traditional Prayer" }}</h2>
+      {{ traditional.text | md | safe }}
+      {% if traditional.source %}<p class="source">{{ traditional.source }}</p>{% endif %}
+    </section>
+    {% if content | trim %}<div class="fleuron-divider">❦</div>{% endif %}
+    {% endif %}
+
+    {% if content | trim %}
     <div class="prayer-body">
+      {% if traditional and traditional.text %}<h2 class="prayer-heading">{{ prayer_heading or "A Personal Prayer" }}</h2>{% elif prayer_heading %}<h2 class="prayer-heading">{{ prayer_heading }}</h2>{% endif %}
       {{ content | safe }}
     </div>
+    {% endif %}
 
-    <p class="updated">Last updated {{ dateModified | isoDate | truncate(10, true, "") }}</p>
+    {% if short_version %}
+    <section class="prayer-section">
+      <h2>Short Version</h2>
+      <div class="short-prayer">{{ short_version | md | safe }}</div>
+    </section>
+    {% endif %}
+
+    {% if days and days.length %}
+    <nav class="day-index" aria-label="Days">
+      {% for d in days %}<a href="#day-{{ loop.index }}">Day {{ loop.index }}</a>{% endfor %}
+    </nav>
+    {% for d in days %}
+    <section class="prayer-section" id="day-{{ loop.index }}">
+      <h2>{{ d.title }}</h2>
+      {{ d.text | md | safe }}
+    </section>
+    {% endfor %}
+    {% endif %}
+
+    {% for v in variants %}
+    <section class="prayer-section">
+      <h2>{{ v.title }}</h2>
+      {{ v.text | md | safe }}
+    </section>
+    {% endfor %}
+
+    {% if how_to_pray %}
+    <section class="prayer-section">
+      <h2>{{ how_to_pray_heading or "When and How to Pray It" }}</h2>
+      {{ how_to_pray | md | safe }}
+    </section>
+    {% endif %}
+
+    {% if verses and verses.length %}
+    <section class="prayer-section">
+      <h2>Scripture to Pray With</h2>
+      {% for v in verses %}
+      <blockquote class="verse">
+        <p>{{ v.text }}</p>
+        <cite>{{ v.ref }}{% if v.translation %} ({{ v.translation }}){% endif %}</cite>
+      </blockquote>
+      {% endfor %}
+    </section>
+    {% endif %}
+
+    {% if faq and faq.length %}
+    <section class="prayer-section" id="faq">
+      <h2>Frequently Asked Questions</h2>
+      {% for f in faq %}
+      <h3>{{ f.q }}</h3>
+      {{ f.a | md | safe }}
+      {% endfor %}
+    </section>
+    {% endif %}
+
+    <p class="updated">Last updated {{ (dateModified or dateAdded) | isoDate | truncate(10, true, "") }}</p>
   </article>
 </div>
+
+{%- set sameCat = [] -%}
+{%- set otherCat = [] -%}
+{%- for p in collections.prayers -%}
+  {%- if p.url != page.url -%}
+    {%- if p.data.category == category -%}
+      {%- if sameCat.length < 6 %}{% set sameCat = (sameCat.push(p), sameCat) %}{% endif -%}
+    {%- elif otherCat.length < 4 -%}
+      {%- set otherCat = (otherCat.push(p), otherCat) -%}
+    {%- endif -%}
+  {%- endif -%}
+{%- endfor %}
+
+{% if sameCat.length %}
+<section class="related">
+  <h2 class="section-heading"><span class="cross">✠</span> More {{ catInfo.title if catInfo else "Prayers" }} <span class="cross">✠</span></h2>
+  <ul class="prayer-list">
+    {% for p in sameCat %}
+    <li><a href="{{ p.url }}"><h3>{{ p.data.title }}</h3><p class="excerpt">{{ p.data.excerpt }}</p></a></li>
+    {% endfor %}
+  </ul>
+  {% if catInfo %}<div class="button-row"><a class="gilded-button" href="/{{ catInfo.slug }}/">All {{ catInfo.title }}</a></div>{% endif %}
+</section>
+{% endif %}
+
+{% if otherCat.length %}
+<section class="related">
+  <h2 class="section-heading"><span class="cross">✠</span> You May Also Pray <span class="cross">✠</span></h2>
+  <ul class="prayer-list">
+    {% for p in otherCat %}
+    <li><a href="{{ p.url }}"><h3>{{ p.data.title }}</h3><p class="excerpt">{{ p.data.excerpt }}</p></a></li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}

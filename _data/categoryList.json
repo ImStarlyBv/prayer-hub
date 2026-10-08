@@ -2,43 +2,101 @@
   {
     "slug": "morning-prayer",
     "title": "Morning Prayers",
+    "headline": "Morning Prayers to Start the Day",
     "rubric": "Ad Matutinum",
     "icon": "wb_sunny",
-    "description": "Prayers to begin the day in gratitude, offering the hours ahead to God."
+    "description": "Morning prayers to begin the day in gratitude: short and powerful prayers, the Catholic Morning Offering, and prayers for family and work.",
+    "intro": "Christians have prayed at first light since the earliest days of the Church. The Psalms speak of seeking God \"early,\" and the Liturgy of the Hours still opens each day with Morning Prayer (Lauds).\n\nA morning prayer does not need to be long. Many people offer the whole day to God in a sentence or two before they get out of bed, then return to a longer prayer once the house is quiet. Below you will find short prayers you can memorize, the traditional Catholic Morning Offering, and prayers for the people and work the day will bring.",
+    "faq": [
+      { "q": "What is a good short morning prayer?", "a": "\"Lord, thank You for this new day. I offer You every thought, word and work of it. Guide me, keep me close to You, and help me love the people I meet. Amen.\"" },
+      { "q": "What is the Catholic Morning Offering?", "a": "A traditional prayer that offers the day's prayers, works, joys and sufferings to God through the Immaculate Heart of Mary, in union with the Mass offered throughout the world." },
+      { "q": "When should I say my morning prayer?", "a": "As early as you can, ideally before checking your phone. Even a short prayer said on waking sets the direction of the day." }
+    ]
   },
   {
     "slug": "night-prayer",
     "title": "Night Prayers",
+    "headline": "Night Prayers Before Bed",
     "rubric": "Ad Completorium",
     "icon": "bedtime",
-    "description": "Prayers for the evening and before sleep — for peace, protection, and rest through the night."
+    "description": "Night prayers before bed: prayers for peace, protection and rest through the night, for you and your family.",
+    "intro": "The Church closes each day with Night Prayer (Compline), a short office of examination, trust and rest. The same pattern works at home: thank God for the day, ask forgiveness for what went wrong, and place yourself and the people you love in His care for the night.\n\nThe prayers here are short enough to pray in bed, with children, or when you can't sleep.",
+    "faq": [
+      { "q": "What should I pray before bed?", "a": "A simple pattern: thank God for one good thing from the day, ask forgiveness for one failing, and entrust your sleep and your family to Him." },
+      { "q": "Is there a Catholic night prayer?", "a": "Yes. Compline (Night Prayer) from the Liturgy of the Hours, which includes Psalm 4 or 91 and the Nunc Dimittis. Many families also pray the Guardian Angel prayer or an Act of Contrition at bedtime." }
+    ]
   },
   {
     "slug": "protection-prayer",
     "title": "Prayers for Protection",
+    "headline": "Prayers for Protection",
     "rubric": "Pro Tutela",
     "icon": "shield",
-    "description": "Prayers invoking God's protection over family, home, and self against harm."
+    "description": "Powerful prayers for protection: the Saint Michael prayer, prayers against evil, and prayers covering your family and home.",
+    "intro": "Asking God for protection is one of the oldest forms of prayer in Scripture. Psalm 91 opens: \"He that dwelleth in the secret place of the most High shall abide under the shadow of the Almighty.\"\n\nThis collection gathers traditional prayers, like the Prayer to Saint Michael the Archangel written by Pope Leo XIII, with prayers for protection over family, home, travel and the night.",
+    "faq": [
+      { "q": "What is the most powerful prayer for protection?", "a": "Many Christians turn to Psalm 91 and the Prayer to Saint Michael the Archangel. What matters is praying with trust, not finding special words." }
+    ]
   },
   {
     "slug": "healing-prayer",
     "title": "Prayers for Healing",
+    "headline": "Prayers for Healing",
     "rubric": "Pro Sanitate",
     "icon": "healing",
-    "description": "Prayers asking God's healing touch over body, mind, and spirit in times of sickness and suffering."
+    "description": "Prayers for healing of body, mind and spirit: for yourself, a sick friend or family member, and before surgery.",
+    "intro": "Jesus spent much of His ministry healing the sick, and the Church has prayed for the sick ever since. James 5:14 tells the sick to call the elders to pray over them.\n\nThese prayers are for times of illness, recovery and waiting. They work for yourself or for someone you love, and they can be prayed alongside medical care, never instead of it."
   },
   {
     "slug": "peace-prayer",
     "title": "Prayers for Peace",
+    "headline": "Prayers for Peace and Anxiety",
     "rubric": "Pro Pace",
     "icon": "self_improvement",
-    "description": "Prayers for peace of heart and mind, and relief from anxiety and worry."
+    "description": "Prayers for peace of heart and mind, and relief from anxiety and worry, with Scripture to pray when you are overwhelmed.",
+    "intro": "\"Be careful for nothing,\" Saint Paul writes, \"but in every thing by prayer and supplication with thanksgiving let your requests be made known unto God\" (Philippians 4:6, KJV).\n\nThese prayers are for anxious nights, racing thoughts and heavy seasons. If anxiety is overwhelming you, please also reach out to a doctor or counselor. Prayer and care go together."
   },
   {
     "slug": "bible-verses",
     "title": "Bible Verses & Reflections",
+    "headline": "Bible Verses by Topic",
     "rubric": "Lectio Divina",
     "icon": "menu_book",
-    "description": "Short reflections paired with Scripture for daily encouragement."
+    "description": "Bible verses by topic, with short reflections and a prayer to go with each: love, faith, strength, anxiety, hard times and more.",
+    "intro": "Each page here gathers Scripture on a single theme, quoted from the King James Version, with a short reflection and a closing prayer. Read slowly, choose one verse that speaks to you, and carry it through the day. That is the heart of *lectio divina*."
+  },
+  {
+    "slug": "saint-prayers",
+    "title": "Prayers to the Saints",
+    "headline": "Prayers to the Saints",
+    "rubric": "Ad Sanctos",
+    "icon": "church",
+    "description": "Traditional prayers to the saints and archangels: Saint Anthony, Padre Pio, Saint Jude, Saint Raphael, Saint Joseph and more.",
+    "intro": "Catholics ask the saints to pray for them, the same way you might ask a friend to pray for you. The saints do not replace God. They join their prayers to ours.\n\nEach page gives the traditional prayer, who the saint was, their feast day, and what people most often ask their intercession for.",
+    "faq": [
+      { "q": "Why do Catholics pray to saints?", "a": "Catholics ask saints to intercede, that is, to pray to God on their behalf, because those in heaven are alive in Christ and part of the same Church (Hebrews 12:1)." }
+    ]
+  },
+  {
+    "slug": "novenas",
+    "title": "Novenas",
+    "headline": "Novena Prayers",
+    "rubric": "Novena",
+    "icon": "calendar_month",
+    "description": "Novena prayers for all nine days: Saint Jude, Divine Mercy, Saint Joseph, the Sacred Heart, Mary Undoer of Knots and more.",
+    "intro": "A novena is a prayer said for nine days in a row, usually for one intention. The tradition comes from the nine days the apostles and Mary prayed together between the Ascension and Pentecost (Acts 1:14).\n\nEach novena here has the prayer for every day on one page. Use the day links to jump to today's prayer.",
+    "faq": [
+      { "q": "What is a novena?", "a": "Nine consecutive days of prayer, usually for a specific intention or in preparation for a feast." },
+      { "q": "What if I miss a day of a novena?", "a": "Simply pray the missed day and continue. A novena is an act of devotion, not a formula that fails if interrupted." }
+    ]
+  },
+  {
+    "slug": "psalms",
+    "title": "Psalms",
+    "headline": "Psalms: Full Text, Meaning & Prayer",
+    "rubric": "Psalterium",
+    "icon": "music_note",
+    "description": "The most-prayed Psalms in full (King James Version), with what each one means and a prayer based on it: Psalm 91, 23, 121, 27 and more.",
+    "intro": "The Psalms are the prayer book of the Bible: 150 songs and prayers that Jesus himself prayed. Each page here gives the full Psalm in the King James Version, a plain-language explanation, and a prayer drawn from it."
   }
 ]

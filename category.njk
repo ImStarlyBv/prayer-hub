@@ -3,17 +3,24 @@ pagination:
   data: categories
   size: 1
   alias: cat
+  addAllPagesToCollections: true
 permalink: "/{{ cat.slug }}/"
 layout: layouts/base.njk
 eleventyComputed:
-  title: "{{ cat.title }}"
+  title: "{{ cat.headline or cat.title }}"
   description: "{{ cat.description }}"
 ---
 <section class="hero">
-  <h1>{{ cat.title }}</h1>
+  <h1>{{ cat.headline or cat.title }}</h1>
   <div class="fleuron-divider"><span class="line"></span>❦<span class="line"></span></div>
   <p>{{ cat.description }}</p>
 </section>
+
+{% if cat.intro %}
+<section class="hub-intro">
+  {{ cat.intro | md | safe }}
+</section>
+{% endif %}
 
 <ul class="prayer-list">
 {% for prayer in collections.prayers %}
@@ -28,3 +35,13 @@ eleventyComputed:
   {% endif %}
 {% endfor %}
 </ul>
+
+{% if cat.faq and cat.faq.length %}
+<section class="hub-intro" id="faq">
+  <h2>Frequently Asked Questions</h2>
+  {% for f in cat.faq %}
+  <h3>{{ f.q }}</h3>
+  {{ f.a | md | safe }}
+  {% endfor %}
+</section>
+{% endif %}

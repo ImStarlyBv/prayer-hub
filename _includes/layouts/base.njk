@@ -5,7 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ title }}{% if title %} · {% endif %}{{ site.name }}</title>
   <meta name="description" content="{{ description or excerpt or site.description }}">
+  {%- if noindex or (cat and not (cat.slug | isPopulated(collections.prayers))) %}
+  <meta name="robots" content="noindex">
+  {%- endif %}
   <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+  {%- set metaDescription = description or excerpt or site.description %}
+  {%- set fullTitle = (title + " · " + site.name) if title else site.name %}
+  <meta property="og:site_name" content="{{ site.name }}">
+  <meta property="og:type" content="{{ 'article' if excerpt else 'website' }}">
+  <meta property="og:title" content="{{ title or site.name }}">
+  <meta property="og:description" content="{{ metaDescription }}">
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+  <meta property="og:image" content="{{ site.url }}/images/logo.png">
+  <meta property="og:locale" content="en_US">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="{{ title or site.name }}">
+  <meta name="twitter:description" content="{{ metaDescription }}">
+  {%- if dateModified %}
+  <meta property="article:modified_time" content="{{ dateModified | isoDate }}">
+  {%- endif %}
   <link rel="alternate" type="application/rss+xml" title="{{ site.name }}" href="{{ site.url }}/rss.xml">
 
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32.png">
@@ -18,6 +36,13 @@
   <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,1,0&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/css/styles.css">
+  {%- if category and excerpt %}
+  {{ page.url | prayerJsonLd | safe }}
+  {%- elif cat %}
+  {{ page.url | categoryJsonLd | safe }}
+  {%- elif page.url == "/" %}
+  {{ page.url | homeJsonLd | safe }}
+  {%- endif %}
 </head>
 <body>
   <header class="site-header">
@@ -26,8 +51,8 @@
       <span>{{ site.name }}</span>
     </a>
     <nav class="site-nav">
-      {% for cat in categories %}
-      <a href="/{{ cat.slug }}/">{{ cat.title }}</a>
+      {% for c in categories | populated(collections.prayers) %}
+      <a href="/{{ c.slug }}/">{{ c.title }}</a>
       {% endfor %}
     </nav>
   </header>
@@ -39,7 +64,7 @@
   <footer class="site-footer">
     <p>❦ ✠ ❦</p>
     <p>&copy; {{ currentYear }} {{ site.name }}. Updated daily.</p>
-    <p class="links"><a href="/archive/">Archive</a> · <a href="/rss.xml">RSS</a> · <a href="/sitemap.xml">Sitemap</a></p>
+    <p class="links"><a href="/archive/">Archive</a> · <a href="/about/">About</a> · <a href="/rss.xml">RSS</a> · <a href="/sitemap.xml">Sitemap</a></p>
   </footer>
 </body>
 </html>

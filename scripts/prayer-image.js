@@ -13,7 +13,7 @@ const fs = require("fs");
 const path = require("path");
 
 const site = require("../_data/site.js");
-const categories = require("../_data/categories.json");
+const categories = require("../_data/categories.js")();
 
 const ROOT = path.join(__dirname, "..");
 const DEFAULT_PRAYERS_DIR = path.join(ROOT, "content", "prayers");
@@ -147,6 +147,7 @@ function resolvePrayerFile(input, prayersDir = DEFAULT_PRAYERS_DIR) {
     ? [input, `${input}.md`]
     : [
         path.resolve(process.cwd(), input),
+        path.resolve(process.cwd(), `${input}.json`),
         path.resolve(ROOT, input),
         path.join(prayersDir, input),
         path.join(prayersDir, `${input}.md`),
@@ -156,9 +157,18 @@ function resolvePrayerFile(input, prayersDir = DEFAULT_PRAYERS_DIR) {
   return found;
 }
 
+// A publisher API payload (see PUBLISHING.md). The image uses the short version
+// when there is one, else the main prayer, else the traditional text.
+function fromPayload(raw) {
+  const p = JSON.parse(raw);
+  const body = p.short_version || p.body_markdown || (p.traditional && p.traditional.text) || "";
+  return { data: p, body };
+}
+
 function loadPrayer(input, prayersDir) {
   const file = resolvePrayerFile(input, prayersDir);
-  const { data, body } = parseFrontmatter(fs.readFileSync(file, "utf8"));
+  const raw = fs.readFileSync(file, "utf8");
+  const { data, body } = file.endsWith(".json") ? fromPayload(raw) : parseFrontmatter(raw);
   const category = categories.find((c) => c.slug === data.category);
   return {
     file,
@@ -167,6 +177,7 @@ function loadPrayer(input, prayersDir) {
     slug: data.slug || path.basename(file, ".md"),
     rubric: category ? category.rubric : "",
     url: data.category && data.slug ? `${site.url}/${data.category}/${data.slug}/` : site.url,
+    body,
   };
 }
 
@@ -476,7 +487,7 @@ function render(prayer, opts) {
   const geo = SIZES[opts.size];
   if (!geo) throw new Error(`unknown size: ${opts.size} (have: ${Object.keys(SIZES).join(", ")})`);
 
-  const paragraphs = toParagraphs(parseFrontmatter(fs.readFileSync(prayer.file, "utf8")).body);
+  const paragraphs = toParagraphs(prayer.body);
   if (paragraphs.length === 0) throw new Error(`${prayer.slug}: no prayer text`);
 
   // Prefer the largest body size that fits on one slide; paginate only if none does.
